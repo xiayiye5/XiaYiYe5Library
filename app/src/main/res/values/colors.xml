@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="white_90_transparent">#E5FFFFFF</color>
+    <color name="white_80_transparent">#CCFFFFFF</color>
+    <color name="white_75_transparent">#C0FFFFFF</color>
+    <color name="white_70_transparent">#B3FFFFFF</color>
+    <color name="white_60_transparent">#A0FFFFFF</color>
+    <color name="white_50_transparent">#80FFFFFF</color>
+    <color name="white_40_transparent">#60FFFFFF</color>
+    <color name="white_30_transparent">#40FFFFFF</color>
+    <color name="white_20_transparent">#30FFFFFF</color>
+    <color name="white_15_transparent">#25FFFFFF</color>
+    <color name="white_10_transparent">#1AFFFFFF</color>
+    <color name="white_05_transparent">#0CFFFFFF</color>
+    <color name="black_90_transparent">#E6000000</color>
+    <color name="black_95_transparent">#F2000000</color>
+    <color name="black_80_transparent">#CC000000</color>
+    <color name="black_75_transparent">#C0000000</color>
+    <color name="black_70_transparent">#B2000000</color>
+    <color name="black_60_transparent">#A0000000</color>
+    <color name="black_50_transparent">#80000000</color>
+    <color name="black_45_transparent">#72000000</color>
+    <color name="black_40_transparent">#60000000</color>
+    <color name="black_30_transparent">#40000000</color>
+    <color name="black_20_transparent">#30000000</color>
+    <color name="black_15_transparent">#25000000</color>
+    <color name="black_10_transparent">#1A000000</color>
+    <color name="black_00_transparent">#00000000</color>
+    <color name="black_06_transparent">#0F000000</color>
+    <color name="black_05_transparent">#0C000000</color>
+    <color name="black_03_transparent">#08000000</color>
+    <color name="black_02_transparent">#07000000</color>
+
+
+    <!--font-color-->
+    <color name="wyze_error_text">#D65035</color>
+
+
+
+    <color name="wyze_list_item_pressed">#d8dedf</color>
+    <color name="dark_blue">#FF0077CB</color>
+    <color name="dark_gray">#22000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="sh_main">#e2e2e3</color>
+    <drawable name="sh_main">#e2e2e3</drawable>
+
+    <drawable name="white">#FFFFFF</drawable>
+
+
+    <color name="red_80_transparent">#CCFF0000</color>
+    <color name="class_A">#FFFFFF</color>
+    <color name="class_B">#000000</color>
+    <color name="class_C">#4D4D4D</color>
+    <color name="class_D">#999999</color>
+    <color name="class_E">#BFBFBF</color>
+    <color name="class_F">#F3F3F3</color>
+    <color name="class_G">#7d7d7d</color>
+    <color name="class_J">#FC4949</color>
+    <color name="class_K">#16A7FA</color>
+    <color name="class_L">#5ead2f</color>
+    <color name="class_H">#3e85dc</color>
+    <color name="class_M">#CCCCCC</color>
+    <color name="class_N">#3eb4cf</color>
+    <color name="class_O">#eaeaea</color>
+    <color name="class_P">#606060</color>
+    <color name="class_Q">#008AE5</color>
+    <color name="class_R">#d7d7d7</color>
+    <color name="class_S">#3fb57d</color>
+    <color name="class_T">#f8f8f8</color>
+    <color name="class_U">#dfdfdf</color>
+    <color name="class_V">#333333</color>
+    <color name="class_W">#969696</color>
+    <color name="class_X">#737373</color>
+    <color name="class_Y">#666666</color>
+    <color name="class_Z">#E7E7E7</color>
+
+
+    <color name="class_text_1">#1a1a1a</color>
+    <color name="class_text_2">#555555</color>
+    <color name="class_text_3">#999999</color>
+    <color name="class_text_4">#bfbfbf</color>
+    <color name="class_text_5">#22d2e9</color>
+    <color name="class_text_6">#ffffff</color>
+    <color name="class_text_7">#ff7700</color>
+    <color name="class_text_8">#404040</color>
+    <color name="class_text_9">#155ba0</color>
+    <color name="class_text_10">#323232</color>
+    <color name="class_text_11">#adadad</color>
+    <color name="class_text_12">#606060</color>
+    <color name="class_text_13">#9c9c9c</color>
+    <color name="class_text_14">#5ead2f</color>
+    <color name="class_text_15">#858585</color>
+    <color name="class_text_16">#aeaeae</color>
+    <color name="class_text_17">#00bc9c</color>
+    <color name="class_text_18">#5f5f5f</color>
+    <color name="class_text_19">#7c7c7c</color>
+    <color name="class_text_20">#232323</color>
+    <color name="class_text_21">#4a4a4a</color>
+    <color name="class_text_22">#c7c7c7</color>
+    <color name="class_text_23">#9e9e9e</color>
+    <color name="class_text_24">#0095f3</color>
+    <color name="class_text_25">#898989</color>
+    <color name="class_text_26">#c5c5c5</color>
+    <color name="class_text_27">#0225da</color>
+    <color name="class_text_28">#19b97d</color>
+    <color name="class_text_29">#808080</color>
+    <color name="class_text_30">#b60909</color>
+    <color name="class_text_31">#00977d</color>
+    <color name="class_text_32">#dadada</color>
+
+    <color name="class_text_trans_80">#ccffffff</color>
+    <color name="class_text_trans_40">#66ffffff</color>
+
+    <color name="class_A_80_trans">#80ffffff</color>
+    <color name="class_A_75_trans">#C0ffffff</color>
+    <color name="class_A_60_trans">#AAffffff</color>
+    <color name="class_A_50_trans">#7fffffff</color>
+    <color name="class_A_30_trans">#4bffffff</color>
+    <color name="class_A_20_trans">#32ffffff</color>
+    <color name="class_A_10_trans">#19ffffff</color>
+    <color name="class_B_75_trans">#C0333333</color>
+    <color name="class_B_15_trans">#27333333</color>
+    <color name="class_O_75_trans">#C0000000</color>
+    <color name="class_O_90_trans">#E6000000</color>
+    <color name="class_D_50_trans">#7f999999</color>
+    <color name="class_E_50_trans">#7faaaaaa</color>
+    <color name="class_L_30_trans">#4B2288DD</color>
+    <color name="class_P_50_trans">#7f606060</color>
+    <color name="msp_dialog_tiltle_blue">#2277BB</color>
+    <color name="startup_page_bg">#2D988D</color>
+
+    <color name="white_60">#60ffffff</color>
+    <color name="red">#FFf2574c</color>
+    <color name="warning_notice_red">#aaFF0000</color>
+    <color name="grey">#FFaeaeae</color>
+    <color name="line_grey">#e0e0e0</color>
+    <color name="real_black">#000000</color>
+    <color name="background_grey">#f8f8f8</color>
+    <color name="green">#00d0b9</color>
+    <color name="black_65_transparent">#A4000000</color>
+    <color name="test_transparent">#00000000</color>
+
+    <color name="black_35_transparent">#A6000000</color>
+    <color name="red_f41a1a">#f41a1a</color>
+    <color name="black_333">#333333</color>
+    <color name="black_666">#666666</color>
+    <color name="black_999">#999999</color>
+    <color name="color_555">#555555</color>
+    <color name="color_e1">#E1E1E1</color>
+    <color name="color_cf">#cfcfcf</color>
+    <color name="color_f7">#f7f7f7</color>
+    <color name="color_2E3C40">#2E3C40</color>
+    <color name="feedback_list_item">#E9E9E9</color>
+
+    <color name="black_85_transparent">#D8000000</color>
+    <color name="blue">#FF157EFB</color>
+    <color name="green_00b58b">#FF00b58b</color>
+    <color name="main_text">#FF5A6161</color>
+    <color name="second_text">#FFAEAEAE</color>
+    <color name="third_text">#FF5A5A5A</color>
+    <color name="green_wyze">#00d0b9</color>
+    <color name="colorPrimary">#FF3F51B5</color>
+    <color name="colorPrimaryDark">#FF303F9F</color>
+    <color name="colorAccent">#FFFF4081</color>
+    <color name="green_wyze_60_trans">#A000D0B9</color>
+    <color name="unTouchable">#FFE6E6E6</color>
+    <color name="offline_bg">#FFC0C0C0</color>
+
+    <color name="wyze_gray_enable">#dde7eb</color>
+    <color name="wyze_green_press">#00bAA6</color>
+    <color name="wyze_gray_press">#ccd4d6</color>
+    <color name="wyze_green_transparent_17">#1700D0B9</color>
+    <color name="wyze_green">#00D0B9</color>
+    <color name="wyze_secondary_color">#0CC4E7</color>
+    <color name="wyze_background_gray">#E5E5E5</color>
+    <color name="wyze_off_disabled">#C9D7DB</color>
+    <color name="wyze_main_text_color">#002632</color>
+    <color name="wyze_main_text_color_50_transparent">#80002632</color>
+    <color name="wyze_meta_data">#7E8D92</color>
+    <color name="wyze_motion_time">#FF7E8D92</color>
+    <color name="wyze_error_tip">#FF001F</color>
+    <color name="wyze_help_bg">#F0F2F2</color>
+    <color name="wyze_green_dialog">#04CCAB</color>
+    <color name="wyze_scene_log_error">#D65035</color>
+    <color name="wyze_edit_hint">#AEBDC2</color>
+    <color name="wyze_color_22262B">#22262B</color>
+
+    <color name="light_color_00d0b9">#00d0b9</color>
+    <color name="light_color_002632">#002632</color>
+    <color name="light_white_bg">#F1F3F3</color>
+    <color name="light_white_gray">#e8eded</color>
+    <color name="light_color_7e8d92">#7e8d92</color>
+    <color name="light_color_f41a1a">#f41a1a</color>
+
+    <color name="color_7E8D92">#7E8D92</color>
+    <color name="color_002632">#002632</color>
+    <color name="color_C0CACC">#C0CACC</color>
+    <color name="color_04ccab">#04ccab</color>
+    <color name="color_00b19d">#00b19d</color>
+
+    <color name="wyze_scene_device_lose">#ff3838</color>
+    <color name="wyze_color_7f8d92">#7F8D92</color>
+    <color name="wyze_color_e2eaec">#e2eaec</color>
+    <color name="wyze_color_21434D">#4021434D</color>
+    <color name="wyze_color_ff1a1a">#FF1A1A</color>
+    <color name="color_c9d7d8">#C9D7D8</color>
+    <color name="color_3ad3dd">#3AD3DD</color>
+    <color name="color_02bcb1">#02bcb1</color>
+    <color name="color_D9DEE0">#D9DEE0</color>
+    <color name="color_de">#DEDEDE</color>
+    <color name="color_no_support">#F1F3F3</color>
+    <color name="wyze_text_F2F4F5">#F2F4F5</color>
+
+    <!--shop-->
+    <color name="wyze_color_00D0B9">#00D0B9</color>
+    <color name="wyze_color_picker_DDE7EB">#DDE7EB</color>
+    <color name="wyze_color_order_AEBDC2">#AEBDC2</color>
+    <color name="wyze_color_order_DDE7EB">#DDE7EB</color>
+    <color name="wyze_color_order_002632">#002632</color>
+    <color name="wyze_color_checktout">#00D0B9</color>
+    <color name="btn_text_bg">#5A6161</color>
+    <color name="wyze_text_color">#666666</color>
+    <color name="wyze_text_color_7E8D92">#7E8D92</color>
+    <color name="wyze_text_color_CCCCCC">#CCCCCC</color>
+    <color name="wyze_text_color_EBEBEB">#EBEBEB</color>
+    <color name="class_text_color_808080">#808080</color>
+    <color name="wyze_text_color_A8A8A8">#A8A8A8</color>
+    <color name="wyze_text_color_0080CC">#0080CC</color>
+    <color name="wyze_text_color_515963">#515963</color>
+    <color name="wyze_text_color_CED6DE">#CED6DE</color>
+    <color name="wyze_text_color_6A737D">#6A737D</color>
+    <color name="wyze_text_color_F4F4F4">#F4F4F4</color>
+    <color name="wyze_text_color_1C9E90">#1C9E90</color>
+    <color name="wyze_text_color_192124">#192124</color>
+    <color name="wyze_text_color_393F47">#393F47</color>
+    <color name="wyze_text_6A737D">#6A737D</color>
+
+    <color name="text_color_gray">#222222</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#B0000000</color>
+    <color name="viewfinder_frame">#90FFFFFF</color>
+
+    <color name="wyze_input_border_color">#7E8D92</color>
+
+    <color name="wyze_band_yellow_color">#FFA812</color>
+    <color name="wyze_text_color_25CB9C">#25CB9C</color>
+
+    <color name="wyze_bottom_line">#E5E5E5</color>
+    <color name="wyze_text_colors">#4A585C</color>
+    <color name="wyze_text_788A8F">#788A8F</color>
+    <color name="wyze_text_E4EAEB">#E4EAEB</color>
+    <color name="wyze_text_D3DEE0">#D3DEE0</color>
+    <color name="wyze_text_A8B2BD">#A8B2BD</color>
+    <color name="wyze_text_F0F4F7">#F0F4F7</color>
+
+    <color name="wyze_text_BE4027">#BE4027</color>
+    <color name="wyze_text_DEE3E3">#DEE3E3</color>
+    <color name="wyze_text_2E3C40">#2E3C40</color>
+
+    <color name="wyze_color_CED6DE">#CED6DE</color>
+    <color name="wyze_color_E6EBF0">#E6EBF0</color>
+    <color name="wyze_color_FF6666">#FF6666</color>
+
+    <drawable name="transparent">#00ffffff</drawable>
+
+    <color name="wyze_bg_F0F4F7">#F0F4F7</color>
+    <color name="wyze_text_F7FAFC">#F7FAFC</color>
+    <color name="wyze_text_4A585C">#4A585C</color>
+    <color name="wyze_green2">#1C9E90</color>
+    <color name="color_515963">#515963</color>
+    <color name="wyze_text_color_E6EBF0">#E6EBF0</color>
+    <color name="color_F7FAFC">#F7FAFC</color>
+</resources>
