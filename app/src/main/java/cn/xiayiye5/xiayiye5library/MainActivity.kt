@@ -1,8 +1,11 @@
 package cn.xiayiye5.xiayiye5library
 
+import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cn.xiayiye5.xiayiye5library.utils.MainThread
 import cn.xiayiye5.xiayiye5library.utils.ThreadUtils
@@ -15,6 +18,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         tvName = findViewById(R.id.tvName)
         ThreadUtils.getInstance().createThread(runnables)
+        tvName.setOnClickListener {
+            Toast.makeText(this, "点击了", Toast.LENGTH_LONG).show()
+            showTimeDialog();
+        }
+    }
+
+    private fun showTimeDialog() {
+//        TimePickerDialog(this, 3, OnTimeSetListener { view, hourOfDay, minute ->
+//            val houre = hourOfDay
+//            if (minute < 10) {
+//                tvName.setText(houre.toString() + ":" + "0" + minute)
+//            } else {
+//                tvName.setText(houre.toString() + ":" + minute)
+//            }
+//        }, 0, 0, true).show()
+
+        DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT).show()
     }
 
     var runnables = Runnable {
