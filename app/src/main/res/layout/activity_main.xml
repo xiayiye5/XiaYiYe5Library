@@ -6,14 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
         android:id="@+id/tvName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="showTimeDialog"
+        android:text="显示时间弹框"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btSimple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showSimple"
+        android:text="显示单选框"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintVertical_bias="0.161" />
+
+    <Button
+        android:id="@+id/btMore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showMore"
+        android:text="显示复选框"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSimple"
+        app:layout_constraintVertical_bias="0.161" />
+
+    <Button
+        android:id="@+id/btDiffer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showDiffer"
+        android:text="自定义弹框"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMore"
+        app:layout_constraintVertical_bias="0.161" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

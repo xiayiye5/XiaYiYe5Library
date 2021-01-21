@@ -4,9 +4,10 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import cn.xiayiye5.xiayiye5library.dialog.XiaYiYe5Dialog
 import cn.xiayiye5.xiayiye5library.utils.MainThread
 import cn.xiayiye5.xiayiye5library.utils.ThreadUtils
 import cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Toast
@@ -18,13 +19,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         tvName = findViewById(R.id.tvName)
         ThreadUtils.getInstance().createThread(runnables)
-        tvName.setOnClickListener {
-            Toast.makeText(this, "点击了", Toast.LENGTH_LONG).show()
-            showTimeDialog();
-        }
     }
 
-    private fun showTimeDialog() {
+    fun showTimeDialog(view: View) {
 //        TimePickerDialog(this, 3, OnTimeSetListener { view, hourOfDay, minute ->
 //            val houre = hourOfDay
 //            if (minute < 10) {
@@ -51,5 +48,18 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         //移除线程
         ThreadUtils.getInstance().removeThread(runnables)
+    }
+
+    fun showSimple(view: View) {
+        XiaYiYe5Dialog.getInstance().getSimpleDialog(this)
+
+    }
+
+    fun showMore(view: View) {
+        XiaYiYe5Dialog.getInstance().getMultiDialog(this)
+    }
+
+    fun showDiffer(view: View) {
+        XiaYiYe5Dialog.getInstance().createViewDialog(this, layoutInflater.inflate(R.layout.activity_dialog, null, false))
     }
 }
