@@ -62,4 +62,8 @@ class MainActivity : AppCompatActivity() {
     fun showDiffer(view: View) {
         XiaYiYe5Dialog.getInstance().createViewDialog(this, layoutInflater.inflate(R.layout.activity_dialog, null, false))
     }
+
+    fun showList(view: View) {
+        XiaYiYe5Dialog.getInstance().listDialog(this)
+    }
 }

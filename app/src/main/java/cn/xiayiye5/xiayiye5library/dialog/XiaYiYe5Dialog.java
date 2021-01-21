@@ -11,7 +11,7 @@ import cn.xiayiye5.xiayiye5library.R;
 /**
  * @author : xiayiye5
  * @date : 2021/1/21 14:13
- * 类描述 :
+ * 类描述 : 感谢博主:https://www.jb51.net/article/149742.htm
  */
 public class XiaYiYe5Dialog {
     private static final XiaYiYe5Dialog XIA_YI_YE_5_DIALOG = new XiaYiYe5Dialog();
@@ -75,6 +75,22 @@ public class XiaYiYe5Dialog {
         alertBuilder.setPositiveButton("确定", null);
         alertBuilder.setNegativeButton("取消", null);
         //下面这一步最后显示
+        alertBuilder.show();
+    }
+
+    /**
+     * 列表弹框
+     *
+     * @param activity 显示弹框的activity页面
+     */
+    public void listDialog(Activity activity) {
+        final String[] items = {"列表1", "列表2", "列表3", "列表4"};
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
+        alertBuilder.setTitle("这是列表框");
+        alertBuilder.setItems(items, (dialogInterface, i) -> {
+            Toast.makeText(activity, items[i], Toast.LENGTH_SHORT).show();
+            dialogInterface.dismiss();
+        });
         alertBuilder.show();
     }
 }
