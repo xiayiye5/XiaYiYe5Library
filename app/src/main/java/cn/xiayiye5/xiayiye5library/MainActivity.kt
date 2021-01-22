@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cn.xiayiye5.xiayiye5library.dialog.XiaYiYe5Dialog
-import cn.xiayiye5.xiayiye5library.utils.MainThread
+import cn.xiayiye5.xiayiye5library.thread.MainThread
 import cn.xiayiye5.xiayiye5library.utils.ThreadUtils
 import cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Toast
 
