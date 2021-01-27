@@ -2,6 +2,7 @@ package cn.xiayiye5.xiayiye5library
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -60,10 +61,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showDiffer(view: View) {
-        XiaYiYe5Dialog.getInstance().createViewDialog(this, layoutInflater.inflate(R.layout.activity_dialog, null, false))
+        XiaYiYe5Dialog.getInstance()
+            .createViewDialog(this, layoutInflater.inflate(R.layout.activity_dialog, null, false))
     }
 
     fun showList(view: View) {
         XiaYiYe5Dialog.getInstance().listDialog(this)
+    }
+
+    fun goRecyclerPage(view: View) {
+        startActivity(Intent(this, RecyclerViewPage::class.java))
     }
 }

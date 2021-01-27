@@ -61,7 +61,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btDiffer"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintTop_toBottomOf="@+id/btDiffer" />
+
+    <Button
+        android:id="@+id/btRecyclerPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goRecyclerPage"
+        android:text="滑动列表"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btListDialog" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
