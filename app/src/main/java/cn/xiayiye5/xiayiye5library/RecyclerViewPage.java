@@ -18,8 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.xiayiye5.xiayiye5library.utils.ToastUtil;
-
 /**
  * @author : xiayiye5
  * @date : 2021/1/26 18:14
@@ -39,10 +37,13 @@ public class RecyclerViewPage extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter();
         rvList.setAdapter(myAdapter);
         int[] a = new int[2];
+        //获取中间竖线在屏幕的绝对坐标
         viewLine.getLocationOnScreen(a);
         //滚动到中间位置
         rvList.scrollToPosition(9);
+        //设置缓存数量
         rvList.setItemViewCacheSize(myAdapter.getItemCount());
+        //设置滑动监听
         rvList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
