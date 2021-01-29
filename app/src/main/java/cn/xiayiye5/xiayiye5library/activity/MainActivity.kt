@@ -1,4 +1,4 @@
-package cn.xiayiye5.xiayiye5library
+package cn.xiayiye5.xiayiye5library.activity
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -8,6 +8,8 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import cn.xiayiye5.xiayiye5library.R
+import cn.xiayiye5.xiayiye5library.RecyclerViewPage
 import cn.xiayiye5.xiayiye5library.dialog.XiaYiYe5Dialog
 import cn.xiayiye5.xiayiye5library.thread.MainThread
 import cn.xiayiye5.xiayiye5library.utils.ThreadUtils
@@ -71,5 +73,9 @@ class MainActivity : AppCompatActivity() {
 
     fun goRecyclerPage(view: View) {
         startActivity(Intent(this, RecyclerViewPage::class.java))
+    }
+
+    fun scrollerText(view: View) {
+        startActivity(Intent(this, ScrollerTextActivity::class.java))
     }
 }

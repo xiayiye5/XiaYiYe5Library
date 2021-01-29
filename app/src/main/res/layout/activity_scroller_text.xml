@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ScrollerTextActivity">
+
+    <TextView
+        android:id="@+id/stv"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@color/colorPrimary"
+        android:fadingEdgeLength="50dp"
+        android:requiresFadingEdge="vertical"
+        android:text="康师傅的剧看对方东方 v 都是妇女年发生的反倒是东方还是短发沙登伯格 v 是电饭煲 v 告诉对方的妇科病女生的腐败 v东方女顾客的腐败 v的妇科病 v 看的腐败 v 地方房东那边 v 简单方便的妇科病 v 空间的腐败具地方的妇科病 v 看对方比较发达对方可能被 v 看的腐败的妇科病 v 看的腐败 v 地方的腐败 v 的疯牛病的腐败能否带来的烦恼对方不努力的疯牛病你地方了东方老年斑 v 来的疯牛病努力的疯牛病你发的列表 v 努力的腐败立法的老板娘 v 水电费 v 的方式打客服那边 v 健康的方式但是看 v 能看见高帅富 v 过的方式"
+        android:textSize="100sp" />
+
+</LinearLayout>
