@@ -1,11 +1,20 @@
 package cn.xiayiye5.xiayiye5library.bean;
 
+import android.content.Context;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.facade.service.SerializationService;
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
+
 /**
  * @author : xiayiye5
  * @date : 2021/2/4 19:38
  * 类描述 :
  */
-public class ObjName {
+@Route(path = "/service/json")
+public class ObjName implements SerializationService {
     public ObjName() {
     }
 
@@ -41,5 +50,25 @@ public class ObjName {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public <T> T json2Object(String input, Class<T> clazz) {
+        return new Gson().fromJson(input, clazz);
+    }
+
+    @Override
+    public String object2Json(Object instance) {
+        return new Gson().toJson(instance);
+    }
+
+    @Override
+    public <T> T parseObject(String input, Type clazz) {
+        return new Gson().fromJson(input, clazz);
+    }
+
+    @Override
+    public void init(Context context) {
+
     }
 }

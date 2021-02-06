@@ -16,7 +16,7 @@ import cn.xiayiye5.xiayiye5library.comment.RouterValue;
  */
 @Route(path = RouterValue.WITH_PARAM_SER)
 public class WithSerActivity extends BaseActivity {
-    @Autowired
+//    @Autowired
     ObjNameSer objName;
 
     @Override
@@ -27,6 +27,7 @@ public class WithSerActivity extends BaseActivity {
     @Override
     protected void initId() {
         TextView tvObject = findViewById(R.id.tvObject);
+        objName = (ObjNameSer) getIntent().getSerializableExtra("objNameSer");
         tvObject.setText(String.format("携带对象跳转页面%s", objName.getAddress()));
     }
 

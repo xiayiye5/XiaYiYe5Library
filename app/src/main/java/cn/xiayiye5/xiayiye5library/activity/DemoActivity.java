@@ -43,15 +43,14 @@ public class DemoActivity extends BaseActivity {
     }
 
     public void jumpWithObject(View view) {
-        ObjName data = new ObjName();
-        data.setAddress("北京市东直门外大街230号");
+        ObjName data = new ObjName("test",20,"北京市东直门外大街230号");
 //        ARouter.getInstance().build(RouterValue.WITH_PARAM_OBJECT).withObject("objName", data).navigation();
     }
 
     public void jumpWithSer(View view) {
         ObjNameSer data = new ObjNameSer();
         data.setAddress("北京市东直门外大街239号");
-//        ARouter.getInstance().build(RouterValue.WITH_PARAM_SER).withSerializable("objNameSer", data).navigation();
+        ARouter.getInstance().build(RouterValue.WITH_PARAM_SER).withSerializable("objNameSer", data).navigation();
     }
 
     public void goDemo(View view) {
