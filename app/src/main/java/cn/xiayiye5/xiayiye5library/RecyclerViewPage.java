@@ -20,6 +20,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.xiayiye5.xiayiye5library.adapter.MyListAdapter;
+
 /**
  * @author : xiayiye5
  * @date : 2021/1/26 18:14
@@ -36,7 +38,12 @@ public class RecyclerViewPage extends AppCompatActivity {
         mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvList.setLayoutManager(mLinearLayoutManager);
         rvList.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
-        MyAdapter myAdapter = new MyAdapter();
+//        MyAdapter myAdapter = new MyAdapter();
+        List<String> data = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            data.add(String.valueOf(i));
+        }
+        MyListAdapter myAdapter = new MyListAdapter(R.layout.activity_recyclerview_item, data);
         rvList.setAdapter(myAdapter);
         int[] a = new int[2];
         //获取中间竖线在屏幕的绝对坐标
