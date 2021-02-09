@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.File;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,7 +140,7 @@ public class RecyclerViewPage extends AppCompatActivity {
         public void onBindViewHolder(@NonNull DemoHolder holder, int position) {
             holder.itemView.getLocationOnScreen(a);
             locationList.add(a[0]);
-            holder.tvTestData.setText("测试数据" + position);
+            holder.tvTestData.setText(MessageFormat.format("测试数据{0}", position));
         }
 
         @Override
