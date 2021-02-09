@@ -1,6 +1,5 @@
 package cn.xiayiye5.xiayiye5library.adapter;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -27,13 +26,19 @@ public abstract class XiaYiYeAdapter<E> extends RecyclerView.Adapter<XiaYiYeAdap
 
     private XiaYiYeHolder xiaYiYeHolder;
     List<E> data;
-    private int layoutId;
+    private final int layoutId;
 
     @NonNull
     @Override
     public XiaYiYeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
         xiaYiYeHolder = new XiaYiYeHolder(view);
+        //设置单个view的点击事件
+        view.setOnClickListener(v -> {
+            if (null != onItemClickListener) {
+                onItemClickListener.itemClick();
+            }
+        });
         return xiaYiYeHolder;
     }
 
@@ -49,11 +54,21 @@ public abstract class XiaYiYeAdapter<E> extends RecyclerView.Adapter<XiaYiYeAdap
         coverData(holder, position);
     }
 
+    /**
+     * 只需要实现这一个方法即可
+     *
+     * @param holder   holder
+     * @param position 位置
+     */
     protected abstract void coverData(XiaYiYeHolder holder, int position);
 
 
     public XiaYiYeHolder getXiaYiYeHolder() {
         return xiaYiYeHolder;
+    }
+
+    public XiaYiYeAdapter<E> getAdapter() {
+        return this;
     }
 
     @Override
@@ -72,18 +87,28 @@ public abstract class XiaYiYeAdapter<E> extends RecyclerView.Adapter<XiaYiYeAdap
         return xiaYiYeHolder.itemView.findViewById(id);
     }
 
-    public XiaYiYeHolder setText(@IdRes int id, String data) {
+    public void setText(@IdRes int id, String data) {
         getTextView(id).setText(TextUtils.isEmpty(data) ? "数据为空" : data);
-        return this.xiaYiYeHolder;
     }
 
-    public XiaYiYeHolder setTextColor(@IdRes int id, @ColorInt int color) {
+    public void setTextColor(@IdRes int id, @ColorInt int color) {
         getTextView(id).setTextColor(color);
-        return this.xiaYiYeHolder;
     }
 
-    public XiaYiYeHolder setTextColor(@IdRes int id, @Size(min = 1) String color) {
+    public void setTextColor(@IdRes int id, @Size(min = 1) String color) {
         getTextView(id).setTextColor(Color.parseColor(color));
-        return this.xiaYiYeHolder;
+    }
+
+    interface OnItemClickListener {
+        /**
+         * 设置列表item的监听事件
+         */
+        void itemClick();
+    }
+
+    OnItemClickListener onItemClickListener;
+
+    public void setItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }
