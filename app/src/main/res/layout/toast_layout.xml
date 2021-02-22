@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/transparent"
     android:fitsSystemWindows="true"
     android:gravity="center"
@@ -26,4 +28,13 @@
             android:textColor="#ffffff"
             android:textSize="12sp" />
     </LinearLayout>
+
+    <!--增加预览页面-->
+    <cn.xiayiye5.xiayiye5library.WpkListItemLayout
+        android:id="@+id/madv_deviceinfo_devicemodel_wil"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        tools:info_text_right="Wyze Cam v2"
+        app:layout_type="info_right"
+        app:title_text="测试数据" />
 </LinearLayout>

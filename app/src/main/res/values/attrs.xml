@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="WpkListItemLayout">
+        <attr name="layout_type">
+            <enum name="title_only" value="0" />
+            <enum name="info_right" value="1" />
+            <enum name="info_bottom" value="2" />
+            <enum name="info_right_bottom" value="3" />
+        </attr>
+        <attr name="left_icon1" format="reference" />
+        <attr name="left_icon2" format="reference" />
+        <attr name="has_toggle" format="boolean" />
+        <attr name="is_checked" format="boolean" />
+        <attr name="has_explain" format="boolean" />
+        <attr name="has_arrow" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="title_text_color" format="color" />
+        <attr name="info_text_right" format="string" />
+        <attr name="info_text_right_color" format="color" />
+        <attr name="info_text_bottom" format="string" />
+        <attr name="info_text_bottom_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkSwitchButton" tools:ignore="ResourceName">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswThumbRangeRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextThumbInset" format="dimension" />
+        <attr name="kswTextExtra" format="dimension" />
+        <attr name="kswTextAdjust" format="dimension" />
+        <attr name="numberPickerStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkTextButton">
+        <attr name="text_color_press" format="color" />
+        <attr name="text_color_disabled" format="color" />
+        <attr name="bg_color_checked" format="color" />
+        <attr name="bg_drawable" format="reference" />
+        <attr name="bg_drawable_checked" format="reference" />
+        <attr name="bg_color" format="color" />
+        <!-- 不设置 bg_color_press，默认显示波纹效果 -->
+        <attr name="bg_color_press" format="color" />
+        <attr name="bg_color_disabled" format="color" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_color_press" format="color" />
+        <attr name="border_color_disabled" format="color" />
+        <attr name="shape_style">
+            <enum name="rect" value="0" />
+            <enum name="circle" value="1" />
+            <enum name="rounded_rect" value="2" />
+        </attr>
+        <attr name="radians" format="dimension" />
+        <attr name="corner_type">
+            <enum name="ALL" value="0" />
+            <enum name="TOP_LEFT" value="1" />
+            <enum name="TOP_RIGHT" value="2" />
+            <enum name="BOTTOM_LEFT" value="3" />
+            <enum name="BOTTOM_RIGHT" value="4" />
+            <enum name="TOP" value="5" />
+            <enum name="BOTTOM" value="6" />
+            <enum name="LEFT" value="7" />
+            <enum name="RIGHT" value="8" />
+            <enum name="OTHER_TOP_LEFT" value="9" />
+            <enum name="OTHER_TOP_RIGHT" value="10" />
+            <enum name="OTHER_BOTTOM_LEFT" value="11" />
+            <enum name="OTHER_BOTTOM_RIGHT" value="12" />
+            <enum name="DIAGONAL_FROM_TOP_LEFT" value="13" />
+            <enum name="DIAGONAL_FROM_TOP_RIGHT" value="14" />
+        </attr>
+        <attr name="ripple_color" format="color" />
+        <!-- 波纹效果，is_disappear为true，播放并透明 -->
+        <attr name="is_disappear" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkCommButton">
+        <attr name="button_style">
+            <enum name="main_button" value="0" />
+            <enum name="secondary_button" value="1" />
+            <enum name="warning_button" value="2" />
+            <enum name="shop_button" value="3" />
+            <enum name="shop_button_white" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WheelPickerView">
+        <attr name="max_text_size" format="dimension" />
+        <attr name="min_text_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="WheelPicker">
+        <attr name="wheel_data" format="reference" />
+        <attr name="wheel_selected_item_position" format="integer" />
+        <attr name="wheel_item_text_size" format="dimension" />
+        <attr name="wheel_item_text_color" format="color" />
+        <attr name="wheel_selected_item_text_color" format="color" />
+        <attr name="wheel_same_width" format="boolean" />
+        <attr name="wheel_maximum_width_text" format="string" />
+        <attr name="wheel_maximum_width_text_position" format="integer" />
+        <attr name="wheel_visible_item_count" format="integer" />
+        <attr name="wheel_item_space" format="dimension" />
+        <attr name="wheel_cyclic" format="boolean" />
+        <attr name="wheel_indicator" format="boolean" />
+        <attr name="wheel_indicator_color" format="color" />
+        <attr name="wheel_indicator_size" format="dimension" />
+        <attr name="wheel_curtain" format="boolean" />
+        <attr name="wheel_curtain_color" format="color" />
+        <attr name="wheel_atmospheric" format="boolean" />
+        <attr name="wheel_curved" format="boolean" />
+        <attr name="wheel_item_align" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="wheel_font_path" format="string" />
+    </declare-styleable>
+
+
+    <attr name="cropImageStyle" format="reference" />
+
+    <declare-styleable name="CropImageView">
+        <attr name="highlightColor" format="reference|color" />
+        <attr name="showThirds" format="boolean" />
+        <attr name="showCircle" format="boolean" />
+        <attr name="showHandles">
+            <enum name="changing" value="0" />
+            <enum name="always" value="1" />
+            <enum name="never" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="WpkEditText">
+        <attr name="input_style">
+            <enum name="custom_style" value="0" />
+            <enum name="clear_style_dark" value="1" />
+            <enum name="clear_style_light" value="2" />
+            <enum name="hide_style_dark" value="3" />
+            <enum name="hide_style_light" value="4" />
+            <enum name="count_style" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WpkLoadingButton">
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="RecordButton">
+        <attr name="recordTime" format="float" />
+        <attr name="minRecordTime" format="float" />
+        <attr name="touchDelay" format="float" />
+    </declare-styleable>
+
+    <!-- ShadowLayout 阴影 -->
+    <declare-styleable name="ShadowLayout">
+        <attr name="android:foreground" />
+        <attr name="shadowMargin" format="dimension" />
+        <attr name="shadowMarginTop" format="dimension" />
+        <attr name="shadowMarginLeft" format="dimension" />
+        <attr name="shadowMarginRight" format="dimension" />
+        <attr name="shadowMarginBottom" format="dimension" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="cornerRadiusTL" format="dimension" />
+        <attr name="cornerRadiusTR" format="dimension" />
+        <attr name="cornerRadiusBL" format="dimension" />
+        <attr name="cornerRadiusBR" format="dimension" />
+        <attr name="foregroundColor" format="color" />
+        <attr name="shadowColor" format="color" />
+        <attr name="shadowDx" format="float" />
+        <attr name="shadowDy" format="float" />
+        <attr name="shadowRadius" format="dimension" />
+        <attr name="backgroundColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ShadowLayout_Layout">
+        <attr name="layout_gravity" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <!--星星间距-->
+        <attr name="starDistance" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--星星个数-->
+        <attr name="starCount" format="integer" />
+        <!--星星空图-->
+        <attr name="starEmpty" format="reference" />
+        <!--星星满图-->
+        <attr name="starFill" format="reference" />
+    </declare-styleable>
+
+    <!--页面进度条-->
+    <declare-styleable name="WpkPageProgressBarView">
+        <attr name="progress" format="integer" />
+        <attr name="progressColor" format="color" />
+        <attr name="border" format="integer" />
+        <attr name="borderColor" format="color" />
+        <attr name="bgColor" format="color" />
+    </declare-styleable>
+
+    <!--带缩放滚动条-->
+    <declare-styleable name="WpkScaleScrollView">
+        <attr name="scaleView" format="reference" />
+        <attr name="maxWidth" format="dimension" />
+        <attr name="minWidth" format="dimension" />
+        <attr name="isTogether" format="boolean" />
+        <attr name="multiple" format="float" />
+    </declare-styleable>
+
+    <!--hint漂移EditText-->
+    <declare-styleable name="WpkHintFlyEditText">
+        <attr name="multiple" />
+    </declare-styleable>
+    <!--引导页面主按钮-->
+    <declare-styleable name="WpkGuideItemButton">
+        <attr name="description" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkHealthWheelView">
+        <attr name="item_number" format="integer" />
+        <attr name="selected_line_color" format="color" />
+        <attr name="selected_background_color" format="color" />
+        <attr name="normal_text_color" format="color" />
+        <attr name="selected_text_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkCommonTextView">
+        <attr name="wpkTypeface">
+            <enum name="TTNORMSPRO_NORMAL" value="0" />
+            <enum name="TTNORMSPRO_MEDIUM" value="1" />
+            <enum name="TTNORMSPRO_BOLD" value="2" />
+            <enum name="TTNORMSPRO_LIGHT" value="3" />
+            <enum name="TTNORMSPRO_BLACK" value="4" />
+            <enum name="TTNORMSPRO_REGULAR" value="5" />
+            <enum name="TTNORMSPRO_EXTRABLACK" value="6" />
+            <enum name="TTNORMSPRO_THIN" value="7" />
+            <enum name="TTNORMSPRO_EXTRALIGHT" value="8" />
+            <enum name="TTNORMSPRO_EXTRABOLD" value="9" />
+            <enum name="TTNORMSPRO_DEMIBOLD" value="10" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="labels_view">
+        <attr name="selectType" format="enum">
+            <enum name="NONE" value="1" />
+            <enum name="SINGLE" value="2" />
+            <enum name="SINGLE_IRREVOCABLY" value="3" />
+            <enum name="MULTI" value="4" />
+        </attr>
+
+        <attr name="labelGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30" />
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50" />
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03" />
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05" />
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10" />
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70" />
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01" />
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07" />
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11" />
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77" />
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80" />
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08" />
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003" />
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005" />
+        </attr>
+
+        <attr name="maxSelect" format="integer" />
+        <attr name="minSelect" format="integer" />
+        <attr name="maxLines" format="integer" />
+        <attr name="isIndicator" format="boolean" />
+        <attr name="labelTextColor" format="reference|color" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelTextWidth" format="dimension">
+            <enum name="fill_parent" value="-1" />
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="labelTextHeight" format="dimension">
+            <enum name="fill_parent" value="-1" />
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="labelTextPadding" format="dimension" />
+        <attr name="labelTextPaddingLeft" format="dimension" />
+        <attr name="labelTextPaddingTop" format="dimension" />
+        <attr name="labelTextPaddingRight" format="dimension" />
+        <attr name="labelTextPaddingBottom" format="dimension" />
+        <attr name="lineMargin" format="dimension" />
+        <attr name="wordMargin" format="dimension" />
+        <attr name="labelBackground" format="reference|color" />
+        <attr name="singleLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkInputLayout">
+        <attr name="style_type">
+            <enum name="style_search_with_hint" value="0" />
+            <enum name="style_search_without_hint" value="1" />
+            <enum name="style_search_with_cancel" value="2" />
+            <enum name="style_search_get_focus_show_cancel" value="3" />
+            <enum name="style_input_with_hint" value="4" />
+            <enum name="style_input_without_hint" value="5" />
+            <enum name="style_input_with_dropdown" value="6" />
+            <enum name="style_password" value="7" />
+        </attr>
+        <attr name="content_text" format="string" />
+        <attr name="hint_text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkLabelTextView">
+        <attr name="labelType" format="enum">
+            <enum name="page_label" value="1" />
+            <enum name="page_desc" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WpkSettingDescView">
+        <attr name="desc_text" format="string" />
+        <attr name="desc_text_color" format="color" />
+        <attr name="show_tip_drawable" format="boolean" />
+        <attr name="tip_drawable" format="reference" />
+        <attr name="show_bottom_button" format="boolean" />
+        <attr name="bottom_button_text" format="string" />
+        <attr name="bottom_button_text_color" format="color" />
+        <attr name="show_bottom_button_arrow" format="boolean" />
+        <attr name="top_space" format="dimension" />
+        <attr name="bottom_space" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkDeviceSdCardView">
+        <attr name="sd_title" format="string" />
+        <attr name="sd_remain_memory" format="float" />
+        <attr name="sd_total_memory" format="float" />
+        <attr name="sd_memory_unit" format="enum">
+            <enum name="K" value="0" />
+            <enum name="M" value="1" />
+            <enum name="G" value="2" />
+            <enum name="T" value="3" />
+        </attr>
+        <attr name="sd_not_found" format="boolean" />
+        <attr name="show_format_button" format="boolean" />
+        <attr name="format_button_text" format="string" />
+        <attr name="sd_show_progress" format="boolean" />
+        <attr name="sd_progress" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkSliderView">
+        <attr name="show_progress_value" format="boolean" />
+        <attr name="slider_progress" format="integer" />
+        <attr name="show_left_right_desc" format="boolean" />
+        <attr name="left_desc" format="string" />
+        <attr name="right_desc" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="WpkSegmentLayout">
+        <attr name="tabBackground" format="reference" />
+        <attr name="tabSelectedTextColor" format="color" />
+        <attr name="tabTextColor" format="color" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="tabDividerVisible" format="boolean" />
+        <attr name="tabDividerColor" format="color" />
+        <attr name="tabDividerWidth" format="dimension" />
+        <attr name="tabDividerPadding" format="dimension" />
+    </declare-styleable>
+
+</resources>
