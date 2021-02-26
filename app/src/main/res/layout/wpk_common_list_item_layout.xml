@@ -85,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:kswBackColor="@drawable/ic_launcher_background"
+        app:kswBackColor="@color/class_O"
         app:kswThumbColor="@color/white"
         android:visibility="gone"/>
 
