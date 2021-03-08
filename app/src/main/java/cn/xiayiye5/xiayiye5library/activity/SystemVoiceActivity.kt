@@ -13,10 +13,9 @@ import kotlinx.android.synthetic.main.activity_system_voice.*
  * 类描述 : 调节系统音量的服务
  */
 class SystemVoiceActivity : BaseActivity() {
-    lateinit var audioManager: AudioManager
+    //获取系统音量服务,使用懒加载的方式
+    private val audioManager: AudioManager by lazy { getSystemService(Context.AUDIO_SERVICE) as AudioManager }
     override fun loadData() {
-        //获取系统音量服务
-        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         //获取当前音量
         val currentVoice = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
         //获取最大音量
@@ -33,6 +32,7 @@ class SystemVoiceActivity : BaseActivity() {
                         AudioManager.STREAM_MUSIC,
                         progress,
                         AudioManager.FLAG_PLAY_SOUND
+//                        AudioManager.FLAG_SHOW_UI
                     )
                 }
             }
