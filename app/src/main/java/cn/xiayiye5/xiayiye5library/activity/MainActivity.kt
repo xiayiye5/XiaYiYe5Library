@@ -78,4 +78,8 @@ class MainActivity : AppCompatActivity() {
     fun scrollerText(view: View) {
         startActivity(Intent(this, ScrollerTextActivity::class.java))
     }
+
+    fun systemVoice(view: View) {
+        startActivity(Intent(this, SystemVoiceActivity::class.java))
+    }
 }

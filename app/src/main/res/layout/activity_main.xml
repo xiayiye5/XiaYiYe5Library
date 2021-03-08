@@ -85,5 +85,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btRecyclerPage" />
 
+    <Button
+        android:id="@+id/systemVoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="systemVoice"
+        android:text="系统音量"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollerText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

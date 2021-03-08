@@ -24,6 +24,7 @@
         <activity android:name=".activity.WithParamActivity" />
         <activity android:name=".activity.WithObjectActivity" />
         <activity android:name=".activity.WithSerActivity" />
+        <activity android:name=".activity.SystemVoiceActivity" />
     </application>
 
 </manifest>
