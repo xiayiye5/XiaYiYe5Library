@@ -3,7 +3,7 @@ package cn.xiayiye5.xiayiye5library.utils;
 import android.util.Base64;
 import android.util.Log;
 
-import java.security.InvalidKeyException;
+import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -12,16 +12,12 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 
 /**
  * @author : xiayiye5
@@ -93,17 +89,7 @@ public class SafeUtils {
             Cipher cipher = Cipher.getInstance(ECB_PKCS1_PADDING);
             cipher.init(Cipher.ENCRYPT_MODE, keyPublic);
             return cipher.doFinal(data);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
+        } catch (GeneralSecurityException e) {
             e.printStackTrace();
         }
         return new byte[1];
@@ -126,17 +112,7 @@ public class SafeUtils {
             cipher.init(Cipher.ENCRYPT_MODE, keyPrivate);
             // 数据加密
             return cipher.doFinal(data);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
+        } catch (GeneralSecurityException e) {
             e.printStackTrace();
         }
         return new byte[1];
@@ -159,17 +135,7 @@ public class SafeUtils {
             Cipher cipher = Cipher.getInstance(ECB_PKCS1_PADDING);
             cipher.init(Cipher.DECRYPT_MODE, keyPublic);
             return cipher.doFinal(data);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
+        } catch (GeneralSecurityException e) {
             e.printStackTrace();
         }
         return new byte[1];
@@ -188,17 +154,7 @@ public class SafeUtils {
             Cipher cp = Cipher.getInstance(ECB_PKCS1_PADDING);
             cp.init(Cipher.DECRYPT_MODE, keyPrivate);
             return cp.doFinal(encrypted);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
+        } catch (GeneralSecurityException e) {
             e.printStackTrace();
         }
         return new byte[1];
@@ -217,6 +173,7 @@ public class SafeUtils {
         int subDataLoop = 0;
         byte[] buf = new byte[DEFAULT_BUFFER_SIZE];
         for (int i = 0; i < dataLen; i++) {
+            assert buf != null;
             buf[bufIndex] = data[i];
             if (++bufIndex == DEFAULT_BUFFER_SIZE || i == dataLen - 1) {
                 subDataLoop++;
@@ -241,7 +198,7 @@ public class SafeUtils {
         {
             int i = 0;
             for (Byte b : allBytes) {
-                bytes[i++] = b.byteValue();
+                bytes[i++] = b;
             }
         }
         return bytes;
@@ -258,11 +215,12 @@ public class SafeUtils {
         if (dataLen <= DEFAULT_BUFFER_SIZE) {
             return encryptByPrivateKey(data, privateKey);
         }
-        List<Byte> allBytes = new ArrayList<Byte>(2048);
+        List<Byte> allBytes = new ArrayList<>(2048);
         int bufIndex = 0;
         int subDataLoop = 0;
         byte[] buf = new byte[DEFAULT_BUFFER_SIZE];
         for (int i = 0; i < dataLen; i++) {
+            assert buf != null;
             buf[bufIndex] = data[i];
             if (++bufIndex == DEFAULT_BUFFER_SIZE || i == dataLen - 1) {
                 subDataLoop++;
@@ -287,7 +245,7 @@ public class SafeUtils {
         {
             int i = 0;
             for (Byte b : allBytes) {
-                bytes[i++] = b.byteValue();
+                bytes[i++] = b;
             }
         }
         return bytes;
@@ -305,7 +263,7 @@ public class SafeUtils {
             return decryptByPublicKey(encrypted, publicKey);
         }
         int dataLen = encrypted.length;
-        List<Byte> allBytes = new ArrayList<Byte>(1024);
+        List<Byte> allBytes = new ArrayList<>(1024);
         int latestStartIndex = 0;
         for (int i = 0; i < dataLen; i++) {
             byte bt = encrypted[i];
@@ -355,7 +313,7 @@ public class SafeUtils {
         {
             int i = 0;
             for (Byte b : allBytes) {
-                bytes[i++] = b.byteValue();
+                bytes[i++] = b;
             }
         }
         return bytes;
@@ -370,7 +328,7 @@ public class SafeUtils {
             return decryptByPrivateKey(encrypted, privateKey);
         }
         int dataLen = encrypted.length;
-        List<Byte> allBytes = new ArrayList<Byte>(1024);
+        List<Byte> allBytes = new ArrayList<>(1024);
         int latestStartIndex = 0;
         for (int i = 0; i < dataLen; i++) {
             byte bt = encrypted[i];
@@ -420,7 +378,7 @@ public class SafeUtils {
         {
             int i = 0;
             for (Byte b : allBytes) {
-                bytes[i++] = b.byteValue();
+                bytes[i++] = b;
             }
         }
         return bytes;
@@ -442,6 +400,7 @@ public class SafeUtils {
         byte[] encryStr = Base64.encode(encryptBytes, 0);
         Log.e("加解密", "加密后数据\n" + new String(encryStr));
         Log.e("加解密", "加密后数据长度" + encryStr.length);
+
         //私钥解密
         start = System.currentTimeMillis();
         byte[] decryptBytes = decryptByPrivateKeyForSpilt(Base64.decode(encryStr, 0), privateKey.getEncoded());
@@ -458,6 +417,7 @@ public class SafeUtils {
         encryStr = Base64.encode(encryptBytes, 1);
         Log.e("加解密", "加密后数据\n" + new String(encryStr));
         Log.e("加解密", "加密后数据长度" + encryStr.length);
+
         //公钥解密
         start = System.currentTimeMillis();
         decryptBytes = decryptByPublicKeyForSpilt(Base64.decode(encryStr, 1), publicKey.getEncoded());
