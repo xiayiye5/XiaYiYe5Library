@@ -5,6 +5,7 @@ import android.media.AudioManager
 import android.util.Log
 import android.widget.SeekBar
 import cn.xiayiye5.xiayiye5library.R
+import cn.xiayiye5.xiayiye5library.utils.SafeUtils
 import kotlinx.android.synthetic.main.activity_system_voice.*
 
 /**
@@ -51,5 +52,6 @@ class SystemVoiceActivity : BaseActivity() {
 
     override fun initId() {
         // nothing to do
+        SafeUtils.getInstance().test()
     }
 }
