@@ -19,18 +19,47 @@ class SystemVoiceActivity : BaseActivity() {
     override fun loadData() {
         //获取当前音量
         val currentVoice = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+        val callVoice = audioManager.getStreamVolume(AudioManager.STREAM_VOICE_CALL)
         //获取最大音量
         val maxVoice = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+        //获取通话最大音量
+        val maxCallVoice = audioManager.getStreamMaxVolume(AudioManager.STREAM_VOICE_CALL)
         //设置seekBar
         sbSeekBar.max = maxVoice
+        //设置通话最大声音
+        sbVoiceSeekBar.max = maxCallVoice
 //        sbSeekBar.min = minVoice
         sbSeekBar.progress = currentVoice
+        //设置通话进度
+        sbVoiceSeekBar.progress = callVoice
+        //设置音乐点击事件
         sbSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Log.e("打印音量", "音量值${progress}")
                 if (fromUser) {
                     audioManager.setStreamVolume(
                         AudioManager.STREAM_MUSIC,
+                        progress,
+                        AudioManager.FLAG_PLAY_SOUND
+//                        AudioManager.FLAG_SHOW_UI
+                    )
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // nothing to do
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                // nothing to do
+            }
+        })
+        sbVoiceSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                Log.e("打印通话音量", "音量值${progress}")
+                if (fromUser) {
+                    audioManager.setStreamVolume(
+                        AudioManager.STREAM_VOICE_CALL,
                         progress,
                         AudioManager.FLAG_PLAY_SOUND
 //                        AudioManager.FLAG_SHOW_UI
