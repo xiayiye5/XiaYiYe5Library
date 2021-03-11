@@ -39,6 +39,34 @@ android {
     }
     //使用阿帕奇库
     useLibrary 'org.apache.http.legacy'
+    flavorDimensions 'test'
+    productFlavors {
+        yyb {
+            manifestPlaceholders xiayiye5: 'yyb'
+            dimension 'test'
+            versionCode 1
+            versionName '1.0.0'
+            targetSdkVersion 30
+            minSdkVersion 23
+        }
+        baidu {
+            manifestPlaceholders xiayiye5: 'baidu'
+            dimension 'test'
+        }
+        huawei {
+            manifestPlaceholders xiayiye5: 'huawei'
+            dimension 'test'
+            proguardFiles
+        }
+        oppo {
+            manifestPlaceholders xiayiye5: 'oppo'
+            dimension 'test'
+        }
+        vivo {
+            manifestPlaceholders xiayiye5: 'vivo'
+            dimension 'test'
+        }
+    }
 }
 
 dependencies {
