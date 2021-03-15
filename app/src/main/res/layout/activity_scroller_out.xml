@@ -16,12 +16,13 @@
             android:text="测试数据" />
     </FrameLayout>
 
+    <!--behavior_hideable布局是否可以哦隐藏-->
     <RelativeLayout
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:behavior_hideable="true"
+        app:behavior_hideable="false"
         app:behavior_peekHeight="160dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
