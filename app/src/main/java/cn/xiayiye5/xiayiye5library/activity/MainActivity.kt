@@ -86,4 +86,7 @@ class MainActivity : AppCompatActivity() {
     fun scrollerLayout(view: View) {
         startActivity(Intent(this, ScrollerLayoutActivity::class.java))
     }
+    fun bottomScrollerOut(view: View) {
+        startActivity(Intent(this, BottomScrollerOutActivity::class.java))
+    }
 }

@@ -26,6 +26,7 @@
         <activity android:name=".activity.WithSerActivity" />
         <activity android:name=".activity.SystemVoiceActivity" />
         <activity android:name=".activity.ScrollerLayoutActivity" />
+        <activity android:name=".activity.BottomScrollerOutActivity" />
 
         <meta-data android:name="product_id" android:value="${xiayiye5}"/>
     </application>
