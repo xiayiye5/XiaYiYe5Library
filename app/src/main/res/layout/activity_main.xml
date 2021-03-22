@@ -118,5 +118,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollerLayout" />
 
+    <Button
+        android:id="@+id/bt_change_lan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changeLanPage"
+        android:text="切换语言"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomScrollerOut" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
