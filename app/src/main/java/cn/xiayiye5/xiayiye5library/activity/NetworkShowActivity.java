@@ -1,16 +1,12 @@
 package cn.xiayiye5.xiayiye5library.activity;
 
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.usage.NetworkStatsManager;
 import android.content.Context;
 import android.net.TrafficStats;
-import android.view.View;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import cn.xiayiye5.xiayiye5library.R;
 
@@ -45,6 +41,13 @@ public class NetworkShowActivity extends BaseActivity {
 
     @Override
     protected void loadData() {
+        ObjectAnimator alphaAnim = ObjectAnimator.ofFloat(tvNetwork, "alpha", 0.0f, 1.0f);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(tvNetwork, "scaleX", 0.0f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(tvNetwork, "scaleY", 0.0f, 1.0f);
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(alphaAnim, scaleX, scaleY);
+        set.setDuration(3000);
+        set.start();
         //请求成功，开始显示网速
         long mobileRxBytes = TrafficStats.getMobileRxBytes();
         long mobileRxPackets = TrafficStats.getMobileRxPackets();
