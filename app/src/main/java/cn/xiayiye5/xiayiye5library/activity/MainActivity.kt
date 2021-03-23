@@ -94,4 +94,8 @@ class MainActivity : AppCompatActivity() {
     fun changeLanPage(view: View) {
         startActivity(Intent(this, ChangeLanguageActivity::class.java))
     }
+
+    fun networkPage(view: View) {
+        startActivity(Intent(this, NetworkShowActivity::class.java))
+    }
 }

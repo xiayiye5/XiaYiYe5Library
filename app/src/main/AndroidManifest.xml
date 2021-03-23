@@ -28,6 +28,7 @@
         <activity android:name=".activity.ScrollerLayoutActivity" />
         <activity android:name=".activity.BottomScrollerOutActivity" />
         <activity android:name=".activity.ChangeLanguageActivity" />
+        <activity android:name=".activity.NetworkShowActivity" />
 
         <meta-data android:name="product_id" android:value="${xiayiye5}"/>
     </application>
