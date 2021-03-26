@@ -5,10 +5,12 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.usage.NetworkStatsManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.TrafficStats;
 import android.widget.TextView;
 
 import cn.xiayiye5.xiayiye5library.R;
+import cn.xiayiye5.xiayiye5library.other.SimpleJobIntentService;
 
 /**
  * @author : xiayiye5
@@ -60,6 +62,10 @@ public class NetworkShowActivity extends BaseActivity {
         long uidRxBytes = TrafficStats.getUidRxBytes(1);
         NetworkStatsManager networkStatsManager = (NetworkStatsManager) getSystemService(Context.NETWORK_STATS_SERVICE);
         tvNetwork.setText("总下载流量为：" + (totalRxBytes / 8) + "kb");
+        Intent intent = new Intent();
+        intent.putExtra("intent", "haha");
+        //开启后台任务
+        SimpleJobIntentService.enqueueWork(this, intent);
     }
 
 }

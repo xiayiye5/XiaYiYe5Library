@@ -30,7 +30,13 @@
         <activity android:name=".activity.ChangeLanguageActivity" />
         <activity android:name=".activity.NetworkShowActivity" />
 
-        <meta-data android:name="product_id" android:value="${xiayiye5}"/>
+        <meta-data
+            android:name="product_id"
+            android:value="${xiayiye5}" />
+        <!--下面权限必须添加-->
+        <service
+            android:name=".other.SimpleJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
