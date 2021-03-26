@@ -1,144 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <Button
-        android:id="@+id/tvName"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showTimeDialog"
-        android:text="显示时间弹框"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btSimple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showSimple"
-        android:text="显示单选框"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvName"
-        app:layout_constraintVertical_bias="0.161" />
+        <Button
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showTimeDialog"
+            android:text="显示时间弹框"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btMore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showMore"
-        android:text="显示复选框"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSimple"
-        app:layout_constraintVertical_bias="0.161" />
+        <Button
+            android:id="@+id/btSimple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showSimple"
+            android:text="显示单选框"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/btDiffer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showDiffer"
-        android:text="自定义弹框"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMore"
-        app:layout_constraintVertical_bias="0.161" />
+        <Button
+            android:id="@+id/btMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showMore"
+            android:text="显示复选框"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btSimple"
+            app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/btListDialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showList"
-        android:text="列表弹框"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btDiffer" />
+        <Button
+            android:id="@+id/btDiffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showDiffer"
+            android:text="自定义弹框"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btMore"
+            app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/btRecyclerPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="goRecyclerPage"
-        android:text="滑动列表"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btListDialog" />
+        <Button
+            android:id="@+id/btListDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showList"
+            android:text="列表弹框"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btDiffer" />
 
-    <Button
-        android:id="@+id/scrollerText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="scrollerText"
-        android:text="滑动TextView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btRecyclerPage" />
+        <Button
+            android:id="@+id/btRecyclerPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goRecyclerPage"
+            android:text="滑动列表"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btListDialog" />
 
-    <Button
-        android:id="@+id/systemVoice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="systemVoice"
-        android:text="系统音量"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollerText" />
+        <Button
+            android:id="@+id/scrollerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="scrollerText"
+            android:text="滑动TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btRecyclerPage" />
 
-    <Button
-        android:id="@+id/scrollerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="scrollerLayout"
-        android:text="滑动抽屉"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/systemVoice" />
+        <Button
+            android:id="@+id/systemVoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="systemVoice"
+            android:text="系统音量"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollerText" />
 
-    <Button
-        android:id="@+id/bottomScrollerOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="bottomScrollerOut"
-        android:text="底部滑动抽屉"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollerLayout" />
+        <Button
+            android:id="@+id/scrollerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="scrollerLayout"
+            android:text="滑动抽屉"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/systemVoice" />
 
-    <Button
-        android:id="@+id/bt_change_lan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="changeLanPage"
-        android:text="切换语言"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomScrollerOut" />
+        <Button
+            android:id="@+id/bottomScrollerOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bottomScrollerOut"
+            android:text="底部滑动抽屉"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollerLayout" />
 
-    <Button
-        android:id="@+id/btNetworkPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="networkPage"
-        android:text="网速显示"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_change_lan" />
+        <Button
+            android:id="@+id/bt_change_lan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeLanPage"
+            android:text="切换语言"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomScrollerOut" />
+
+        <Button
+            android:id="@+id/btNetworkPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="networkPage"
+            android:text="网速显示"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_change_lan" />
+
+        <Button
+            android:id="@+id/btScale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="scalePage"
+            android:text="view和viewGroup都可双指缩放"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_change_lan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

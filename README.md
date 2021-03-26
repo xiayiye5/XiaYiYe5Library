@@ -14,3 +14,5 @@ Android工具类集合
 - 增加底部滑出菜单
 - 增加app内切换语言功能(app内需要设置多种strings.xml语言)
 - 增加缩放透明动画
+- 增加JobIntentService后台任务
+- 增加View和ViewGroup控件双指缩放功能

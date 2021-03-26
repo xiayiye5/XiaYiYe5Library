@@ -29,6 +29,7 @@
         <activity android:name=".activity.BottomScrollerOutActivity" />
         <activity android:name=".activity.ChangeLanguageActivity" />
         <activity android:name=".activity.NetworkShowActivity" />
+        <activity android:name=".activity.ScaleActivity" />
 
         <meta-data
             android:name="product_id"

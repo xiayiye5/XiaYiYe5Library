@@ -98,4 +98,8 @@ class MainActivity : AppCompatActivity() {
     fun networkPage(view: View) {
         startActivity(Intent(this, NetworkShowActivity::class.java))
     }
+
+    fun scalePage(view: View) {
+        startActivity(Intent(this, ScaleActivity::class.java))
+    }
 }
