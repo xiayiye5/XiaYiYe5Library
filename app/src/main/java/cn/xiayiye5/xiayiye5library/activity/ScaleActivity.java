@@ -27,6 +27,7 @@ public class ScaleActivity extends BaseActivity {
 
     @Override
     protected void loadData() {
+        //设置布局可以缩放
         sv.setIsCanTouch(true);
         sl.setIsCanTouch(true);
     }

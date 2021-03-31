@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <CheckBox
+        android:id="@+id/tv1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="S"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="M"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="T"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="W"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="T"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="F"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tv7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:gravity="center"
+        android:text="S"
+        android:textAllCaps="true"
+        android:textColor="@color/check_box_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv6"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
