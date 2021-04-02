@@ -102,4 +102,7 @@ class MainActivity : AppCompatActivity() {
     fun scalePage(view: View) {
         startActivity(Intent(this, ScaleActivity::class.java))
     }
+
+    fun recodePage(view: View) {
+        startActivity(Intent(this, RecodeActivity::class.java))}
 }
