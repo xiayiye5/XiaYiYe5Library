@@ -104,5 +104,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun recodePage(view: View) {
-        startActivity(Intent(this, RecodeActivity::class.java))}
+        startActivity(Intent(this, RecodeActivity::class.java))
+    }
+
+    fun fragmentPage(view: View) {
+        startActivity(Intent(this, FragmentPageActivity::class.java))
+    }
 }
