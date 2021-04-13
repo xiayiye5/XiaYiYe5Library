@@ -21,11 +21,13 @@ import cn.xiayiye5.xiayiye5library.R;
 public class ElevenFragment extends Fragment implements View.OnClickListener {
 
     private CurrentPage currentPage;
+    private int position;
 
-    public static Fragment getInstance(CurrentPage currentPage) {
+    public static Fragment getInstance(CurrentPage currentPage, int i) {
         ElevenFragment oneFragment = new ElevenFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("currentPage", currentPage);
+        bundle.putInt("position", i);
         oneFragment.setArguments(bundle);
         return oneFragment;
     }
@@ -40,6 +42,7 @@ public class ElevenFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         currentPage = (CurrentPage) getArguments().getSerializable("currentPage");
+        position = getArguments().getInt("position");
         Button btNext = getView().findViewById(R.id.bt_next);
         btNext.setOnClickListener(this);
     }

@@ -20,11 +20,13 @@ import cn.xiayiye5.xiayiye5library.R;
 public class ThreeFragment extends Fragment implements View.OnClickListener {
 
     private CurrentPage currentPage;
+    private int position;
 
-    public static Fragment getInstance(CurrentPage currentPage) {
+    public static Fragment getInstance(CurrentPage currentPage, int i) {
         ThreeFragment oneFragment = new ThreeFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("currentPage", currentPage);
+        bundle.putInt("position", i);
         oneFragment.setArguments(bundle);
         return oneFragment;
     }
@@ -40,11 +42,12 @@ public class ThreeFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
         currentPage = (CurrentPage) getArguments().getSerializable("currentPage");
         Button btNext = getView().findViewById(R.id.bt_next);
+        position = getArguments().getInt("position");
         btNext.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        currentPage.setCurrentPage(3);
+        currentPage.setCurrentPage(position);
     }
 }

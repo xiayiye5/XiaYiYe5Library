@@ -37,17 +37,17 @@ public class GuideActivity extends BaseActivity implements CurrentPage {
 
     @Override
     protected void loadData() {
-        fragmentList.add(OneFragment.getInstance(this));
-        fragmentList.add(TwoFragment.getInstance(this));
-        fragmentList.add(ThreeFragment.getInstance(this));
-        fragmentList.add(FourFragment.getInstance(this));
-        fragmentList.add(FiveFragment.getInstance(this));
-        fragmentList.add(SixFragment.getInstance(this));
-        fragmentList.add(SevenFragment.getInstance(this));
-        fragmentList.add(EgihtFragment.getInstance(this));
-        fragmentList.add(NineFragment.getInstance(this));
-        fragmentList.add(TenFragment.getInstance(this));
-        fragmentList.add(ElevenFragment.getInstance(this));
+        fragmentList.add(OneFragment.getInstance(this, 1));
+        fragmentList.add(TwoFragment.getInstance(this, 2));
+        fragmentList.add(ThreeFragment.getInstance(this, 3));
+        fragmentList.add(FourFragment.getInstance(this, 4));
+        fragmentList.add(FiveFragment.getInstance(this, 5));
+        fragmentList.add(SixFragment.getInstance(this, 6));
+        fragmentList.add(SevenFragment.getInstance(this, 7));
+        fragmentList.add(EgihtFragment.getInstance(this, 8));
+        fragmentList.add(NineFragment.getInstance(this, 9));
+        fragmentList.add(TenFragment.getInstance(this, 10));
+        fragmentList.add(ElevenFragment.getInstance(this, 11));
         pb.setMax(fragmentList.size());
         vp.setAdapter(new GuidePagerAdapter(getSupportFragmentManager(), fragmentList));
         initListener();

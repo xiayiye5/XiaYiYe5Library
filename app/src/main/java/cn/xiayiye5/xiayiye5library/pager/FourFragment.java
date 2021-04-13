@@ -21,11 +21,13 @@ import cn.xiayiye5.xiayiye5library.R;
 public class FourFragment extends Fragment implements View.OnClickListener {
 
     private CurrentPage currentPage;
+    private int position;
 
-    public static Fragment getInstance(CurrentPage currentPage) {
+    public static Fragment getInstance(CurrentPage currentPage, int i) {
         FourFragment oneFragment = new FourFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("currentPage", currentPage);
+        bundle.putInt("position", i);
         oneFragment.setArguments(bundle);
         return oneFragment;
     }
@@ -40,6 +42,7 @@ public class FourFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         currentPage = (CurrentPage) getArguments().getSerializable("currentPage");
+        position = getArguments().getInt("position");
         Button btNextYes = getView().findViewById(R.id.bt_next_yes);
         Button btNextNo = getView().findViewById(R.id.bt_next_no);
         btNextYes.setOnClickListener(this);
@@ -49,7 +52,7 @@ public class FourFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.bt_next_yes) {
-            currentPage.setCurrentPage(4);
+            currentPage.setCurrentPage(position);
         } else {
             Toast.makeText(requireActivity(), "点击了第四个", Toast.LENGTH_LONG).show();
         }
