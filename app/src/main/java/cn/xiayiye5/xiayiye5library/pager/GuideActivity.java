@@ -11,14 +11,13 @@ import java.util.List;
 
 import cn.xiayiye5.xiayiye5library.R;
 import cn.xiayiye5.xiayiye5library.activity.BaseActivity;
-import cn.xiayiye5.xiayiye5library.fragment.HomeFragment;
 
 /**
  * @author : xiayiye5
  * @date : 2021/4/13 10:06
  * 类描述 :
  */
-public class GuideActivity extends BaseActivity {
+public class GuideActivity extends BaseActivity implements CurrentPage {
 
     private ViewPager vp;
     private ProgressBar pb;
@@ -38,10 +37,17 @@ public class GuideActivity extends BaseActivity {
 
     @Override
     protected void loadData() {
-        fragmentList.add(HomeFragment.getInstance("1"));
-        fragmentList.add(HomeFragment.getInstance("2"));
-        fragmentList.add(HomeFragment.getInstance("3"));
-        fragmentList.add(HomeFragment.getInstance("4"));
+        fragmentList.add(OneFragment.getInstance(this));
+        fragmentList.add(TwoFragment.getInstance(this));
+        fragmentList.add(ThreeFragment.getInstance(this));
+        fragmentList.add(FourFragment.getInstance(this));
+        fragmentList.add(FiveFragment.getInstance(this));
+        fragmentList.add(SixFragment.getInstance(this));
+        fragmentList.add(SevenFragment.getInstance(this));
+        fragmentList.add(EgihtFragment.getInstance(this));
+        fragmentList.add(NineFragment.getInstance(this));
+        fragmentList.add(TenFragment.getInstance(this));
+        fragmentList.add(ElevenFragment.getInstance(this));
         pb.setMax(fragmentList.size());
         vp.setAdapter(new GuidePagerAdapter(getSupportFragmentManager(), fragmentList));
         initListener();
@@ -77,5 +83,10 @@ public class GuideActivity extends BaseActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void setCurrentPage(int position) {
+        vp.setCurrentItem(position);
     }
 }
