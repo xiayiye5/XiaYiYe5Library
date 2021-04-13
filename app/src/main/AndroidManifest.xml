@@ -32,6 +32,7 @@
         <activity android:name=".activity.ScaleActivity" />
         <activity android:name=".activity.RecodeActivity" />
         <activity android:name=".activity.FragmentPageActivity" />
+        <activity android:name=".pager.GuideActivity" />
 
         <meta-data
             android:name="product_id"

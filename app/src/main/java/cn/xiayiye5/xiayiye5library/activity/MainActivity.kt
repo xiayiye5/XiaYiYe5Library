@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cn.xiayiye5.xiayiye5library.R
 import cn.xiayiye5.xiayiye5library.RecyclerViewPage
 import cn.xiayiye5.xiayiye5library.dialog.XiaYiYe5Dialog
+import cn.xiayiye5.xiayiye5library.pager.GuideActivity
 import cn.xiayiye5.xiayiye5library.thread.MainThread
 import cn.xiayiye5.xiayiye5library.utils.ThreadUtils
 import cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Toast
@@ -109,5 +110,9 @@ class MainActivity : AppCompatActivity() {
 
     fun fragmentPage(view: View) {
         startActivity(Intent(this, FragmentPageActivity::class.java))
+    }
+
+    fun guidePage(view: View) {
+        startActivity(Intent(this, GuideActivity::class.java))
     }
 }

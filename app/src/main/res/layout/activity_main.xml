@@ -176,6 +176,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btRecode" />
+
+        <Button
+            android:id="@+id/btGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="guidePage"
+            android:text="guide页面"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btFragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
