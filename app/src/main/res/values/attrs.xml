@@ -398,5 +398,7 @@
         <attr name="tabDividerWidth" format="dimension" />
         <attr name="tabDividerPadding" format="dimension" />
     </declare-styleable>
-
+    <declare-styleable name="WeekDayView">
+        <attr name="default_select" format="string" />
+    </declare-styleable>
 </resources>

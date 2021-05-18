@@ -115,4 +115,8 @@ class MainActivity : AppCompatActivity() {
     fun guidePage(view: View) {
         startActivity(Intent(this, GuideActivity::class.java))
     }
+
+    fun weekDayPage(view: View) {
+        startActivity(Intent(this, WeekDayActivity::class.java))
+    }
 }

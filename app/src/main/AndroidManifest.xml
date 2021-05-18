@@ -33,6 +33,7 @@
         <activity android:name=".activity.RecodeActivity" />
         <activity android:name=".activity.FragmentPageActivity" />
         <activity android:name=".pager.GuideActivity" />
+        <activity android:name=".activity.WeekDayActivity" />
 
         <meta-data
             android:name="product_id"
