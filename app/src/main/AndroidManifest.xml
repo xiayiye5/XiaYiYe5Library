@@ -34,11 +34,13 @@
         <activity android:name=".activity.FragmentPageActivity" />
         <activity android:name=".pager.GuideActivity" />
         <activity android:name=".activity.WeekDayActivity" />
+        <activity android:name=".activity.MotionLayoutActivity" />
 
         <meta-data
             android:name="product_id"
             android:value="${xiayiye5}" />
-        <!--下面权限必须添加-->
+
+        <!-- 下面权限必须添加 -->
         <service
             android:name=".other.SimpleJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />

@@ -119,4 +119,8 @@ class MainActivity : AppCompatActivity() {
     fun weekDayPage(view: View) {
         startActivity(Intent(this, WeekDayActivity::class.java))
     }
+
+    fun motionLayoutPage(view: View) {
+        startActivity(Intent(this, MotionLayoutActivity::class.java))
+    }
 }
