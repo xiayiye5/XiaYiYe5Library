@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -33,5 +34,17 @@
         android:layout_height="wrap_content"
         android:onClick="jumpWithSer"
         android:text="携带序列化参数跳转" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveImg"
+        android:text="保存截图" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveImgAndVideo"
+        android:text="保存图片和视频到相册" />
 
 </LinearLayout>

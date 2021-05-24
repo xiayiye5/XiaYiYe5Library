@@ -1,13 +1,24 @@
 package cn.xiayiye5.xiayiye5library.activity;
 
 import android.app.Application;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
 
+import java.io.FileNotFoundException;
+import java.io.OutputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -23,6 +34,9 @@ import cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Utils;
  * 类描述 :
  */
 public class DemoActivity extends BaseActivity {
+
+    private LinearLayout ll;
+
     @Override
     protected int getLayoutView() {
         return R.layout.activity_demo;
@@ -30,6 +44,7 @@ public class DemoActivity extends BaseActivity {
 
     @Override
     protected void initId() {
+        ll = findViewById(R.id.ll);
         Log.e("打印初始化DemoActivity", "id成功");
         //通过反射创建对象
         try {
@@ -84,5 +99,55 @@ public class DemoActivity extends BaseActivity {
 
     public void goDemo(View view) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void saveImgAndVideo(View view) {
+        startActivity(new Intent(this, SaveVideoAndImgActivity.class));
+    }
+
+    public void saveImg(View view) {
+        saveImage29(createBitmap(ll));
+    }
+
+    public Bitmap createBitmap(View v) {
+        Bitmap bmp = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(bmp);
+        c.drawColor(Color.WHITE);
+        v.draw(c);
+        return bmp;
+    }
+
+    /**
+     * API29以下方法
+     *
+     * @param toBitmap 图片
+     */
+    private void saveImage(Bitmap toBitmap) {
+        String insertImage = MediaStore.Images.Media.insertImage(getContentResolver(), toBitmap, "壁纸", "搜索猫相关图片后保存的图片");
+        if (!TextUtils.isEmpty(insertImage)) {
+            Toast.makeText(this, "图片保存成功!" + insertImage, Toast.LENGTH_SHORT).show();
+            Log.e("打印保存路径", insertImage + "-");
+        }
+    }
+
+    /**
+     * API29及以上方法
+     *
+     * @param toBitmap 图片
+     */
+    private void saveImage29(Bitmap toBitmap) {
+        //开始一个新的进程执行保存图片的操作
+        Uri insertUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
+        //使用use可以自动关闭流
+        try {
+            OutputStream outputStream = getContentResolver().openOutputStream(insertUri, "rw");
+            if (toBitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)) {
+                Log.e("保存成功", "success");
+            } else {
+                Log.e("保存失败", "fail");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
