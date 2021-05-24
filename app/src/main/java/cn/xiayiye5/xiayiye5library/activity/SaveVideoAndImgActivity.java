@@ -33,14 +33,14 @@ public class SaveVideoAndImgActivity extends BaseActivity {
     public void savePicture(View view) {
         //下载图片之前记得开启读取sd卡权限
         String fileNamePath = Environment.getExternalStorageDirectory() + "/" + System.currentTimeMillis() + "_" + new Random().nextInt(Integer.MAX_VALUE) + ".jpg";
-        ThreadUtils.getInstance().createThread(() -> DownLoadUtils.getInstance().download(SaveVideoAndImgActivity.this, DownLoadUtils.IMG_URL, fileNamePath));
+        ThreadUtils.getInstance().createThread(() -> DownLoadUtils.getInstance().download(SaveVideoAndImgActivity.this, DownLoadUtils.IMG_URL, fileNamePath, "image/jpg"));
 //        new Thread(() -> DownLoadUtils.getInstance().download(this, DownLoadUtils.IMG_URL, fileNamePath)).start();
     }
 
     public void saveVideo(View view) {
         //下载视频之前记得开启读取sd卡权限
         String fileNamePath = Environment.getExternalStorageDirectory() + "/" + System.currentTimeMillis() + "_" + new Random().nextInt(Integer.MAX_VALUE) + ".mp4";
-        ThreadUtils.getInstance().createThread(() -> DownLoadUtils.getInstance().download(SaveVideoAndImgActivity.this, DownLoadUtils.VIDEO_URL, fileNamePath));
+        ThreadUtils.getInstance().createThread(() -> DownLoadUtils.getInstance().download(SaveVideoAndImgActivity.this, DownLoadUtils.VIDEO_URL, fileNamePath, "video/mp4"));
 //        new Thread(() -> DownLoadUtils.getInstance().download(this, DownLoadUtils.VIDEO_URL, fileNamePath)).start();
     }
 }
