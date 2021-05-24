@@ -1,11 +1,18 @@
 package cn.xiayiye5.xiayiye5library.utils;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,12 +62,32 @@ public class DownLoadUtils {
 //                MediaScannerConnection.scanFile(activity, new String[]{fileNamePath}, new String[]{"image/jpg"}, (path, uri) -> Log.e("资源刷新成功路径为", path));
                 //代表刷新图片到相册只要是图片就会刷新
 //                MediaScannerConnection.scanFile(activity, new String[]{fileNamePath}, new String[]{"image/*"}, (path, uri) -> Log.e("资源刷新成功路径为", path));
+
+                //下面是API29以下的老方法，在API29已弃用！
+//                ContentResolver localContentResolver = activity.getContentResolver();
+//                ContentValues localContentValues = getVideoContentValues(new File(fileNamePath), System.currentTimeMillis());
+//                Uri localUri = localContentResolver.insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, localContentValues);
+//                activity.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri));
+
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static ContentValues getVideoContentValues(File paramFile, long paramLong) {
+        ContentValues localContentValues = new ContentValues();
+        localContentValues.put(MediaStore.Video.Media.TITLE, paramFile.getName());
+        localContentValues.put("_display_name", paramFile.getName());
+        localContentValues.put("mime_type", "video/mp4");
+        localContentValues.put("datetaken", Long.valueOf(paramLong));
+        localContentValues.put("date_modified", Long.valueOf(paramLong));
+        localContentValues.put("date_added", Long.valueOf(paramLong));
+        localContentValues.put("_data", paramFile.getAbsolutePath());
+        localContentValues.put("_size", Long.valueOf(paramFile.length()));
+        return localContentValues;
     }
 
     /**
