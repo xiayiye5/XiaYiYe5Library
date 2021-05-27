@@ -1,6 +1,14 @@
 package cn.xiayiye5.xiayiye5library.pager;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
@@ -23,6 +31,12 @@ public class GuideActivity extends BaseActivity implements CurrentPage {
     private ProgressBar pb;
     private int currentPosition = 0;
     private final List<Fragment> fragmentList = new ArrayList<>();
+    private final Handler handler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
 
     @Override
     protected int getLayoutView() {
@@ -33,10 +47,19 @@ public class GuideActivity extends BaseActivity implements CurrentPage {
     protected void initId() {
         vp = findViewById(R.id.vp);
         pb = findViewById(R.id.pb);
+        findViewById(R.id.pb).setOnClickListener(v -> startAnimAction());
     }
 
     @Override
     protected void loadData() {
+        handler.sendMessage(handler.obtainMessage());
+        handler.sendMessageDelayed(Message.obtain(), 100);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }, 100);
         fragmentList.add(OneFragment.getInstance(this, 1));
         fragmentList.add(TwoFragment.getInstance(this, 2));
         fragmentList.add(ThreeFragment.getInstance(this, 3));
@@ -51,6 +74,19 @@ public class GuideActivity extends BaseActivity implements CurrentPage {
         pb.setMax(fragmentList.size());
         vp.setAdapter(new GuidePagerAdapter(getSupportFragmentManager(), fragmentList));
         initListener();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                Handler handler = new Handler();
+                handler.sendEmptyMessage(0);
+                //开启looper循环必须在发送消息之后
+                Looper.loop();
+                Log.e("打印", "handler");
+            }
+        }).start();
+        HandlerThread.interrupted();
+        startAnimAction();
     }
 
     private void initListener() {
@@ -88,5 +124,16 @@ public class GuideActivity extends BaseActivity implements CurrentPage {
     @Override
     public void setCurrentPage(int position) {
         vp.setCurrentItem(position);
+    }
+
+    private void startAnimAction() {
+        AnimatorSet animationSet = new AnimatorSet();
+        ObjectAnimator alphaAnimation1 = ObjectAnimator.ofFloat(pb, View.ALPHA.getName(), 1f, 0f, 0.5f, 1.0f);
+        ObjectAnimator alphaAnimation2 = ObjectAnimator.ofFloat(vp, View.TRANSLATION_X.getName(), 0f, 100f, 50f, 0f);
+        //回弹插值器
+        alphaAnimation2.setInterpolator(new AnticipateOvershootInterpolator(2f));
+        animationSet.play(alphaAnimation1).with(alphaAnimation2);
+        animationSet.setDuration(1000);
+        animationSet.start();
     }
 }
