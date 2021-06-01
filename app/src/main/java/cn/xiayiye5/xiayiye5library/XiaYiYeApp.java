@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import cn.xiayiye5.xiayiye5library.utils.ANRWatchDog;
+
 /**
  * @author : xiayiye5
  * @date : 2021/2/4 18:46
@@ -21,5 +23,6 @@ public class XiaYiYeApp extends Application {
             ARouter.openDebug();
         }
         ARouter.init(this);
+        new ANRWatchDog().start();
     }
 }

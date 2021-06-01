@@ -19,3 +19,4 @@ Android工具类集合
 - 增加两种获取全局application的方法
 - 增加反射机制 获取成员变量可以设置值和获取值通过set和get 获取成员方法可以执行方法通过invoke 获取构造方法可以创建对象通过newInstance
 - 增加打印app整个过程的handler日志
+- 增加应用程序无响应工具类监听
