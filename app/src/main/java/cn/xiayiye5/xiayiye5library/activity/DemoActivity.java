@@ -7,9 +7,11 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Printer;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -88,6 +90,13 @@ public class DemoActivity extends BaseActivity {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+        //增加打印app整个过程的handler日志
+        Looper.getMainLooper().setMessageLogging(new Printer() {
+            @Override
+            public void println(String x) {
+                Log.e("打印全局handler消息", x);
+            }
+        });
     }
 
     @Override
