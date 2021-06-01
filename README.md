@@ -16,3 +16,5 @@ Android工具类集合
 - 增加缩放透明动画
 - 增加JobIntentService后台任务
 - 增加View和ViewGroup控件双指缩放功能
+- 增加两种获取全局application的方法
+- 增加反射机制 获取成员变量可以设置值和获取值通过set和get 获取成员方法可以执行方法通过invoke 获取构造方法可以创建对象通过newInstance

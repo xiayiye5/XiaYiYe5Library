@@ -20,7 +20,9 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import java.io.FileNotFoundException;
 import java.io.OutputStream;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import cn.xiayiye5.xiayiye5library.R;
 import cn.xiayiye5.xiayiye5library.bean.ObjName;
@@ -49,6 +51,8 @@ public class DemoActivity extends BaseActivity {
         //通过反射创建对象
         try {
             Class<?> aClass = Class.forName("cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Utils");
+            //如果有public类型的空构造时，可以直接使用class对象.newInstance()创建对象
+            //Object o1 = aClass.newInstance();
             Constructor<?> declaredConstructor = aClass.getDeclaredConstructor();
             //暴力反射
             declaredConstructor.setAccessible(true);
@@ -57,6 +61,21 @@ public class DemoActivity extends BaseActivity {
             if (o instanceof XiaYiYe5Utils) {
                 Application newApplication = ((XiaYiYe5Utils) o).getNewApplication();
                 Log.e("打印对象", newApplication.getClass().getSimpleName());
+            }
+            //获取方法
+            Method getNewApplication = aClass.getMethod("getNewApplication");
+            //执行getNewApplication方法,返回一个application对象
+            Object invoke = getNewApplication.invoke(o);
+            Log.e("打印对象application", invoke.getClass().getSimpleName());
+
+            //获取所有成员变量包括私有的
+            Field[] declaredFields = aClass.getDeclaredFields();
+            for (Field declaredField : declaredFields) {
+                //设置暴力反射
+                declaredField.setAccessible(true);
+                Log.e("打印所有成员变量", declaredField.getName() + " = " + declaredField.get(o));
+                declaredField.set(o, null);
+                Log.e("打印所有成员变量-", declaredField.get(o) + "");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
