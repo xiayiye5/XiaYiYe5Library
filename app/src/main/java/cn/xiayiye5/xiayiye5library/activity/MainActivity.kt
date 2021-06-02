@@ -123,4 +123,8 @@ class MainActivity : AppCompatActivity() {
     fun motionLayoutPage(view: View) {
         startActivity(Intent(this, MotionLayoutActivity::class.java))
     }
+
+    fun memoryLeakPage(view: View) {
+        startActivity(Intent(this, MemoryLeakActivity::class.java))
+    }
 }

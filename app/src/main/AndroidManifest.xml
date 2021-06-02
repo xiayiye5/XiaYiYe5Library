@@ -42,6 +42,7 @@
         <activity android:name=".activity.WeekDayActivity" />
         <activity android:name=".activity.MotionLayoutActivity" />
         <activity android:name=".activity.SaveVideoAndImgActivity" />
+        <activity android:name=".activity.MemoryLeakActivity" />
 
         <meta-data
             android:name="product_id"

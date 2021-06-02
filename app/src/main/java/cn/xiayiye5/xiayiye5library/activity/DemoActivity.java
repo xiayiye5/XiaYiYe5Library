@@ -76,7 +76,7 @@ public class DemoActivity extends BaseActivity {
                 //设置暴力反射
                 declaredField.setAccessible(true);
                 Log.e("打印所有成员变量", declaredField.getName() + " = " + declaredField.get(o));
-                declaredField.set(o, null);
+                //declaredField.set(o, null);
                 Log.e("打印所有成员变量-", declaredField.get(o) + "");
             }
         } catch (ClassNotFoundException e) {
