@@ -64,14 +64,24 @@ public class DownLoadUtils {
 
     public static ContentValues getVideoContentValues(File paramFile, long paramLong) {
         ContentValues localContentValues = new ContentValues();
-        localContentValues.put(MediaStore.Video.Media.TITLE, paramFile.getName());
+     /* localContentValues.put(MediaStore.Video.Media.TITLE, paramFile.getName());
         localContentValues.put(MediaStore.Video.Media.DISPLAY_NAME, paramFile.getName());
         localContentValues.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4");
         localContentValues.put(MediaStore.Video.Media.DATE_TAKEN, Long.valueOf(paramLong));
         localContentValues.put(MediaStore.Video.Media.DATE_MODIFIED, Long.valueOf(paramLong));
         localContentValues.put(MediaStore.Video.Media.DATE_ADDED, Long.valueOf(paramLong));
         localContentValues.put(MediaStore.Video.Media.DATA, paramFile.getAbsolutePath());
-        localContentValues.put(MediaStore.Video.Media.SIZE, Long.valueOf(paramFile.length()));
+        localContentValues.put(MediaStore.Video.Media.SIZE, Long.valueOf(paramFile.length()));*/
+
+        //方法二
+        localContentValues.put(MediaStore.MediaColumns.TITLE, paramFile.getName());
+        localContentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, paramFile.getName());
+        localContentValues.put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4");
+        localContentValues.put(MediaStore.MediaColumns.DATE_TAKEN, Long.valueOf(paramLong));
+        localContentValues.put(MediaStore.MediaColumns.DATE_MODIFIED, Long.valueOf(paramLong));
+        localContentValues.put(MediaStore.MediaColumns.DATE_ADDED, Long.valueOf(paramLong));
+        localContentValues.put(MediaStore.MediaColumns.DATA, paramFile.getAbsolutePath());
+        localContentValues.put(MediaStore.MediaColumns.SIZE, Long.valueOf(paramFile.length()));
         return localContentValues;
     }
 
