@@ -4,9 +4,16 @@
     package="cn.xiayiye5.xiayiye5library">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--拍照存储权限-->
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+
+    <!--拍照权限-->
+<!--    <uses-feature-->
+<!--        android:name="android.hardware.camera"-->
+<!--        android:required="true" />-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".XiaYiYeApp"
@@ -43,6 +50,7 @@
         <activity android:name=".activity.MotionLayoutActivity" />
         <activity android:name=".activity.SaveVideoAndImgActivity" />
         <activity android:name=".activity.MemoryLeakActivity" />
+        <activity android:name=".activity.TakePhotoActivity" />
 
         <meta-data
             android:name="product_id"
@@ -52,6 +60,19 @@
         <service
             android:name=".other.SimpleJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!--拍照需要配置provider为了兼容Android 7.0-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.xiayiye5"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+
+            </meta-data>
+        </provider>
     </application>
 
 </manifest>

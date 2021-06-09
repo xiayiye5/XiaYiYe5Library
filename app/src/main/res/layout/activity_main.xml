@@ -220,6 +220,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/motionLayout" />
+
+        <Button
+            android:id="@+id/takePhotoPagePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="takePhotoPage"
+            android:text="拍照页面"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memoryLeakPage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

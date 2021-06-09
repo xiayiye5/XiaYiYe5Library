@@ -127,4 +127,8 @@ class MainActivity : AppCompatActivity() {
     fun memoryLeakPage(view: View) {
         startActivity(Intent(this, MemoryLeakActivity::class.java))
     }
+
+    fun takePhotoPage(view: View) {
+        startActivity(Intent(this, TakePhotoActivity::class.java))
+    }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--    配置拍照图片存储路径为: 包名/files/Pictures-->
+    <external-path
+        name="my_images"
+        path="Android/data/cn.xiayiye5.xiayiye5library/files/Pictures" />
+</paths>
