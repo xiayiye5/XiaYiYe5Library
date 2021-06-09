@@ -10,9 +10,9 @@
         tools:ignore="ScopedStorage" />
 
     <!--拍照权限-->
-<!--    <uses-feature-->
-<!--        android:name="android.hardware.camera"-->
-<!--        android:required="true" />-->
+    <!--    <uses-feature-->
+    <!--        android:name="android.hardware.camera"-->
+    <!--        android:required="true" />-->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -61,7 +61,9 @@
             android:name=".other.SimpleJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <!--拍照需要配置provider为了兼容Android 7.0-->
+        <!--拍照需要配置provider为了兼容Android 7.0 下面的authorities里面的值需要和拍照里面的provider一样，下面这段代码
+        Uri photoUri = FileProvider.getUriForFile(activity, activity.getPackageName() + ".xiayiye5", photoFile);
+        -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.xiayiye5"
