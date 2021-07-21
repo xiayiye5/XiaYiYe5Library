@@ -131,4 +131,8 @@ class MainActivity : AppCompatActivity() {
     fun takePhotoPage(view: View) {
         startActivity(Intent(this, TakePhotoActivity::class.java))
     }
+
+    fun goViewBinging(view: View) {
+        startActivity(Intent(this, ViewBingingActivity::class.java))
+    }
 }

@@ -51,6 +51,7 @@
         <activity android:name=".activity.SaveVideoAndImgActivity" />
         <activity android:name=".activity.MemoryLeakActivity" />
         <activity android:name=".activity.TakePhotoActivity" />
+        <activity android:name=".activity.ViewBingingActivity" />
 
         <meta-data
             android:name="product_id"
