@@ -25,9 +25,10 @@ class ViewBingingActivity : AppCompatActivity() {
         bindView.switch1.textOff = "关"
         bindView.switch1.textOn = "开"
         bindView.switch1.setOnCheckedChangeListener { buttonView, isChecked ->
+            bindView.switch1.text = if (isChecked) "打开了" else "关闭了"
             Toast.makeText(
                 this@ViewBingingActivity,
-                isChecked.toString(),
+                if (isChecked) "打开了" else "关闭了",
                 Toast.LENGTH_LONG
             ).show()
         }

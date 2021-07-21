@@ -25,3 +25,4 @@ Android工具类集合
 - 增加static静态对象内存泄露的解决方法
 - 增加多线程内存泄露的解决方法
 - 增加activity和fragment页面拍照功能
+- 增加ViewBinding示例演示
