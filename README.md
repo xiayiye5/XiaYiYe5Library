@@ -26,3 +26,4 @@ Android工具类集合
 - 增加多线程内存泄露的解决方法
 - 增加activity和fragment页面拍照功能
 - 增加ViewBinding示例演示
+- 增加通过gradle命令获取提交commitId的方法
