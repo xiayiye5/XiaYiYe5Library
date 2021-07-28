@@ -4,6 +4,11 @@ plugins {
     id 'kotlin-android-extensions'
 }
 
+static def getGitRevision() {
+    //获取提交记录版本id的方法
+    return "git rev-parse --short HEAD".execute().text.trim()
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -24,10 +29,19 @@ android {
         }
     }
 
+    GIT_COMMIT_ID = getGitRevision()
     buildTypes {
+        debug {
+            buildConfigField("String", "PLUGIN_VERSION_NAME", "\"" + defaultConfig.versionName + "\"")
+            // Java代码调用,赋值id给变量
+            buildConfigField "String", "gitCommitId", "\"${GIT_COMMIT_ID}\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "PLUGIN_VERSION_NAME", "\"" + defaultConfig.versionName + "\"")
+            // Java代码调用,赋值id给变量
+            buildConfigField "String", "gitCommitId", "\"${GIT_COMMIT_ID}\""
         }
     }
     compileOptions {
