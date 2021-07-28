@@ -14,6 +14,7 @@ import android.util.Log;
 import android.util.Printer;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -26,6 +27,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import cn.xiayiye5.xiayiye5library.BuildConfig;
 import cn.xiayiye5.xiayiye5library.R;
 import cn.xiayiye5.xiayiye5library.bean.ObjName;
 import cn.xiayiye5.xiayiye5library.bean.ObjNameSer;
@@ -49,6 +51,8 @@ public class DemoActivity extends BaseActivity {
     @Override
     protected void initId() {
         ll = findViewById(R.id.ll);
+        TextView tvCommitId = findViewById(R.id.tvCommitId);
+        tvCommitId.setText(String.format("提交版本id:%s", BuildConfig.gitCommitId));
         Log.e("打印初始化DemoActivity", "id成功");
         //通过反射创建对象
         try {
