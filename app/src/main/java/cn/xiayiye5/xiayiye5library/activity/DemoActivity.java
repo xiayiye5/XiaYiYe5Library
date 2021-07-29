@@ -3,16 +3,19 @@ package cn.xiayiye5.xiayiye5library.activity;
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Printer;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +45,8 @@ import cn.xiayiye5.xiayiye5library.utils.XiaYiYe5Utils;
 public class DemoActivity extends BaseActivity {
 
     private LinearLayout ll;
+    private ImageView ivShowScreen;
+    private Uri insertUri;
 
     @Override
     protected int getLayoutView() {
@@ -53,6 +58,7 @@ public class DemoActivity extends BaseActivity {
         ll = findViewById(R.id.ll);
         TextView tvCommitId = findViewById(R.id.tvCommitId);
         tvCommitId.setText(String.format("提交版本id:%s", BuildConfig.gitCommitId));
+        ivShowScreen = findViewById(R.id.iv_show_screen);
         Log.e("打印初始化DemoActivity", "id成功");
         //通过反射创建对象
         try {
@@ -100,6 +106,12 @@ public class DemoActivity extends BaseActivity {
             public void println(String x) {
                 Log.e("打印全局handler消息", x);
             }
+        });
+        ivShowScreen.setOnClickListener(v -> {
+            //打开图片
+            Intent intent = new Intent(DemoActivity.this, OpenImageActivity.class);
+            intent.putExtra("img_uri", insertUri);
+            startActivity(intent);
         });
     }
 
@@ -169,7 +181,15 @@ public class DemoActivity extends BaseActivity {
      */
     private void saveImage29(Bitmap toBitmap) {
         //开始一个新的进程执行保存图片的操作
-        Uri insertUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
+        insertUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
+        Cursor cursor = this.getContentResolver().query(insertUri, null, null, null, null);
+        int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+        cursor.moveToFirst();
+        String path = cursor.getString(columnIndex);
+        Log.e("打印截图位置", path + "=");
+        ivShowScreen.setImageBitmap(toBitmap);
+        ivShowScreen.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(() -> ivShowScreen.setVisibility(View.GONE), 3000);
         //使用use可以自动关闭流
         try {
             OutputStream outputStream = getContentResolver().openOutputStream(insertUri, "rw");
