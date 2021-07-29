@@ -27,3 +27,4 @@ Android工具类集合
 - 增加activity和fragment页面拍照功能
 - 增加ViewBinding示例演示
 - 增加通过gradle命令获取提交commitId的方法
+- 增加截图显示点击截图缩略图打开图片
