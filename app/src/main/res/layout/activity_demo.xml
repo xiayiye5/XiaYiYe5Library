@@ -48,6 +48,14 @@
         android:onClick="saveImgAndVideo"
         android:text="保存图片和视频到相册" />
 
+    <ImageView
+        android:id="@+id/iv_show_screen"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/tvCommitId"
         android:layout_width="match_parent"
