@@ -52,6 +52,9 @@
         <activity android:name=".activity.MemoryLeakActivity" />
         <activity android:name=".activity.TakePhotoActivity" />
         <activity android:name=".activity.ViewBingingActivity" />
+        <activity
+            android:name=".activity.OpenImageActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
         <meta-data
             android:name="product_id"
