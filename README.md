@@ -28,3 +28,4 @@ Android工具类集合
 - 增加ViewBinding示例演示
 - 增加通过gradle命令获取提交commitId的方法
 - 增加截图显示点击截图缩略图打开图片
+- 增加使用fragment回退栈达到activity一样可以回退的效果
