@@ -55,6 +55,7 @@
         <activity
             android:name=".activity.OpenImageActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".activity.FragmentReplaceActivity" />
 
         <meta-data
             android:name="product_id"
