@@ -39,7 +39,7 @@ public class FragmentOne extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return View.inflate(requireActivity(), R.layout.fragment_one, null);
+        return View.inflate(requireActivity(), R.layout.one_fragment, null);
     }
 
     @Override
