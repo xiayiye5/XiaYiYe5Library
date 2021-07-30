@@ -149,6 +149,10 @@ public class DemoActivity extends BaseActivity {
         startActivity(new Intent(this, SaveVideoAndImgActivity.class));
     }
 
+    public void replaceFrg(View view) {
+        startActivity(new Intent(this, FragmentReplaceActivity.class));
+    }
+
     public void saveImg(View view) {
         saveImage29(createBitmap(ll));
     }
