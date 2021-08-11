@@ -3,16 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/ml"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/activity_motion_layout_scene">
+    app:layoutDescription="@xml/activity_motion_layout_scene"
+    app:motionDebug="NO_DEBUG">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="动画测试"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="800dp" />
+        android:layout_marginTop="50dp"
+        android:text="Login"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_account"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_login">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Account"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_passwd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@id/et_account"
+        app:layout_constraintStart_toStartOf="@id/et_account"
+        app:layout_constraintTop_toBottomOf="@id/et_account">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="password"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_action_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+
+        app:layout_constraintTop_toBottomOf="@id/et_passwd"
+        tools:ignore="HardcodedText" />
+
+    <ProgressBar
+        android:id="@+id/pb_login_progress"
+        android:layout_width="80dp"
+
+
+        android:layout_height="80dp"
+        android:layout_marginTop="14dp"
+        android:alpha="0"
+
+        app:layout_constraintEnd_toEndOf="@+id/et_account"
+
+        app:layout_constraintStart_toStartOf="@+id/et_account"
+        app:layout_constraintTop_toBottomOf="@id/et_passwd" />
+
+
 </androidx.constraintlayout.motion.widget.MotionLayout>
